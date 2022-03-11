@@ -8,21 +8,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
-    static Toast toast;
+    private static MyApplication application;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        application = (MyApplication) getApplication();
         setContentView(R.layout.activity_login);
 
         findViewById(R.id.agree_and_continue).setOnClickListener(view -> {
-            if (toast != null)
-                toast.cancel();
             String phone = ((TextView) LoginActivity.this.findViewById(R.id.phone_input)).getText().toString();
             if (phone.length() == 11) {
-                toast = Toast.makeText(getApplicationContext(), "正在登录，" + phone, Toast.LENGTH_SHORT);
-                toast.show();
+                application.showToast("正在登录，" + phone, Toast.LENGTH_SHORT);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -31,8 +28,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 LoginActivity.this.startActivity(intent);
             } else {
-                toast = Toast.makeText(getApplicationContext(), "请输入正确的手机号！", Toast.LENGTH_LONG);
-                toast.show();
+                application.showToast("请输入正确的手机号！", Toast.LENGTH_LONG);
             }
         });
     }
