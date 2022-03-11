@@ -15,7 +15,6 @@ public class LaunchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launch);
         Button loginBtn = findViewById(R.id.login_btn);
         loginBtn.setOnClickListener(view -> {
-            Log.i("d", "sda");
             Intent intent = new Intent(LaunchActivity.this, LoginActivity.class);
             startActivity(intent);
         });
