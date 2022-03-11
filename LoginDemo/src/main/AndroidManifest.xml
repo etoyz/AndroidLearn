@@ -16,10 +16,12 @@
             android:label="@string/title_activity_main" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.YangZhao1.NoActionBar" />
         <activity
             android:name=".LaunchActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.YangZhao1.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
