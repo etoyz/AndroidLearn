@@ -17,9 +17,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         findViewById(R.id.agree_and_continue).setOnClickListener(view -> {
-            String phone = ((TextView) LoginActivity.this.findViewById(R.id.phone_input)).getText().toString();
-            if (phone.length() == 11) {
-                application.showToast("正在登录，" + phone, Toast.LENGTH_SHORT);
+            String mobileNumber = ((TextView) LoginActivity.this.findViewById(R.id.phone_input)).getText().toString();
+            if (application.verifyMobileNumber(mobileNumber)) {
+                application.showToast("正在登录，" + mobileNumber, Toast.LENGTH_SHORT);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
