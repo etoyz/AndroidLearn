@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 if (application.login(mobileNumber, password)) {
-                    application.showToast("欢迎回来！", Toast.LENGTH_SHORT);
+                    application.showToast("登录成功！", Toast.LENGTH_SHORT);
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     LoginActivity.this.startActivity(intent);
                 } else
