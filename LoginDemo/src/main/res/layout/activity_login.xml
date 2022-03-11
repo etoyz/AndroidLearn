@@ -131,6 +131,7 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/agree_and_continue"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#04BE02"
