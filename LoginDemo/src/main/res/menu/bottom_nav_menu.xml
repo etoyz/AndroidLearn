@@ -2,18 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/wechat_home"
+        android:icon="@drawable/wechat_home"
+        android:title="@string/title_wechat_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:id="@+id/address_book"
+        android:icon="@drawable/address_book"
         android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:id="@+id/find"
+        android:icon="@drawable/find"
         android:title="@string/title_notifications" />
+
+    <item
+        android:id="@+id/me"
+        android:icon="@drawable/profile"
+        android:title="我" />
 
 </menu>
