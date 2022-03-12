@@ -9,12 +9,12 @@
     <item
         android:id="@+id/address_book"
         android:icon="@drawable/address_book"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_address_book" />
 
     <item
         android:id="@+id/find"
         android:icon="@drawable/find"
-        android:title="@string/title_notifications" />
+        android:title="@string/title_find" />
 
     <item
         android:id="@+id/me"
