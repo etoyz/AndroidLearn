@@ -52,10 +52,24 @@ public class MyApplication extends Application {
     }
 
     protected boolean login(String id, String password) {
-        if (tmpUsers.containsKey(id) && tmpUsers.containsValue(password)) {
-            credentials.edit().putString("id", id).putString("password", password).apply();
-            return true;
-        } else
+        if (verifyMobileNumber(id)) { // 验证手机号格式
+            showToast("正在登录，" + id, Toast.LENGTH_SHORT);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (tmpUsers.containsKey(id) && tmpUsers.containsValue(password)) {
+                credentials.edit().putString("id", id).putString("password", password).apply();
+                showToast("登录成功！", Toast.LENGTH_SHORT);
+                return true;
+            } else {
+                showToast("密码错误！", Toast.LENGTH_SHORT);
+                return false;
+            }
+        } else {
+            showToast("手机号无效！", Toast.LENGTH_LONG);
             return false;
+        }
     }
 }

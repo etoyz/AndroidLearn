@@ -37,14 +37,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        findViewById(R.id.logoutBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                application.logout();
-                application.showToast("已退出!", Toast.LENGTH_SHORT);
-                Intent intent = new Intent(MainActivity.this, LaunchActivity.class);
-                startActivity(intent);
-            }
+        findViewById(R.id.logoutBtn).setOnClickListener(v -> {
+            application.logout();
+            application.showToast("已退出!", Toast.LENGTH_SHORT);
+            startActivity(new Intent(MainActivity.this, LaunchActivity.class));
         });
     }
 
