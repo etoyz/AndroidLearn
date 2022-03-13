@@ -1,5 +1,7 @@
 package edu.ytu.logindemo.placeholder;
 
+import android.graphics.drawable.Icon;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +40,7 @@ public class PlaceholderContent {
     }
 
     private static PlaceholderItem createPlaceholderItem(int position) {
-        return new PlaceholderItem(String.valueOf(position), "Item " + position, makeDetails(position));
+        return new PlaceholderItem(String.valueOf(position), null, "朋友" + position, "朋友" + position + "给你发来一条消息", makeDetails(position));
     }
 
     private static String makeDetails(int position) {
@@ -55,18 +57,22 @@ public class PlaceholderContent {
      */
     public static class PlaceholderItem {
         public final String id;
-        public final String content;
+        public final Icon avatar;
+        public final String remark;
+        public final String preview;
         public final String details;
 
-        public PlaceholderItem(String id, String content, String details) {
+        public PlaceholderItem(String id, Icon avatar, String remark, String preview, String details) {
             this.id = id;
-            this.content = content;
+            this.avatar = avatar;
+            this.remark = remark;
+            this.preview = preview;
             this.details = details;
         }
 
-        @Override
-        public String toString() {
-            return content;
-        }
+//        @Override
+//        public String toString() {
+//            return content;
+//        }
     }
 }

@@ -4,8 +4,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import edu.ytu.logindemo.R;
 import edu.ytu.logindemo.placeholder.PlaceholderContent.PlaceholderItem;
 import edu.ytu.logindemo.databinding.FragmentMessageBinding;
 
@@ -33,8 +35,9 @@ public class MyMessageRecyclerViewAdapter extends RecyclerView.Adapter<MyMessage
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.avatar.setImageResource(R.drawable.wechat_home);
+        holder.remark.setText(mValues.get(position).remark);
+        holder.preview.setText(mValues.get(position).preview);
     }
 
     @Override
@@ -43,19 +46,21 @@ public class MyMessageRecyclerViewAdapter extends RecyclerView.Adapter<MyMessage
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
-        public final TextView mContentView;
+        public final ImageView avatar;
+        public final TextView remark;
+        public final TextView preview;
         public PlaceholderItem mItem;
 
         public ViewHolder(FragmentMessageBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+            avatar = binding.avatar;
+            remark = binding.remark;
+            preview = binding.preview;
         }
 
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
-        }
+//        @Override
+//        public String toString() {
+//            return super.toString() + " '" + mContentView.getText() + "'";
+//        }
     }
 }
