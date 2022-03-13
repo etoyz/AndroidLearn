@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/wechat_home"
-        android:name="edu.ytu.logindemo.ui.home.HomeFragment"
+        android:name="edu.ytu.logindemo.ui.home.MessageFragment"
         android:label="@string/title_wechat_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_message_list" />
 
     <fragment
         android:id="@+id/address_book"

@@ -1,8 +1,6 @@
 package edu.ytu.logindemo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -35,12 +33,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
-        findViewById(R.id.logoutBtn).setOnClickListener(v -> {
-            application.logout();
-            application.showToast("已退出!", Toast.LENGTH_SHORT);
-            startActivity(new Intent(MainActivity.this, LaunchActivity.class));
-        });
     }
 
 }
