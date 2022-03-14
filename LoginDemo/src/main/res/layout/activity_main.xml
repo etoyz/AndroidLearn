@@ -70,6 +70,7 @@
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         android:theme="@style/BottomNavigationTheme"
+        app:itemRippleColor="@null"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
