@@ -1,11 +1,16 @@
 package edu.ytu.logindemo;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -24,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(findViewById(R.id.toolbar));
+//        setSupportActionBar(findViewById(R.id.toolbar));
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -33,8 +38,12 @@ public class MainActivity extends AppCompatActivity {
                 R.id.wechat_home, R.id.address_book, R.id.find, R.id.me)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-    }
 
+        navController.addOnDestinationChangedListener((navController1, navDestination, bundle) -> {
+            Log.i("aa", navDestination.toString());
+            ((TextView)findViewById(R.id.title)).setText(navDestination.getLabel());
+        });
+    }
 }
