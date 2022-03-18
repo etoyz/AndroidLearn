@@ -43,7 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
         navController.addOnDestinationChangedListener((navController1, navDestination, bundle) -> {
             Log.i("aa", navDestination.toString());
-            ((TextView)findViewById(R.id.title)).setText(navDestination.getLabel());
+            ((TextView) findViewById(R.id.title)).setText(navDestination.getLabel());
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }
