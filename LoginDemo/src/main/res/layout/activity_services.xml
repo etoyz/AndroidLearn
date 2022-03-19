@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:theme="@style/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="服务"
+            android:gravity="center_vertical|center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/toolbar_title_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/more" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/service_page_margin"
+            android:layout_marginTop="@dimen/service_page_margin"
+            android:layout_marginEnd="@dimen/service_page_margin"
+            android:layout_marginBottom="@dimen/service_page_margin"
+            android:background="@drawable/bg_wechat_pay"
+            android:paddingTop="@dimen/service_page_padding"
+            android:paddingBottom="@dimen/service_page_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="收付款"
+                android:textAlignment="center"
+                android:textSize="27sp"
+                app:drawableTopCompat="@drawable/pay_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="钱包"
+                android:textAlignment="center"
+                android:textSize="27sp"
+                app:drawableTopCompat="@drawable/pocket" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/service_page_margin"
+            android:layout_marginEnd="@dimen/service_page_margin"
+            android:layout_marginBottom="@dimen/service_page_margin"
+            android:background="@drawable/bg_wechat_services"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="@dimen/service_page_padding">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="生活服务"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/service_page_margin"
+                    android:layout_marginBottom="@dimen/service_page_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="手机充值"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="生活缴费"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="Q币充值"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="城市服务"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/service_page_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="腾讯公益"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="医疗健康"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/jkm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/service_page_inner_margin"
+                            android:layout_marginEnd="@dimen/service_page_inner_margin"
+                            android:text="防疫健康码"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/service_text_size"
+                            app:drawableTopCompat="@drawable/pay" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="14dp"
+                            android:layout_marginStart="@dimen/service_page_inner_margin"
+                            android:layout_marginEnd="@dimen/service_page_inner_margin"
+                            android:text="限时推广"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/service_page_margin"
+            android:layout_marginEnd="@dimen/service_page_margin"
+            android:background="@drawable/bg_wechat_services"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="@dimen/service_page_padding">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="交通出行"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/service_page_margin"
+                    android:layout_marginBottom="@dimen/service_page_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="出行服务"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="火车票机票"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="滴滴出行"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/service_page_inner_margin"
+                        android:layout_marginEnd="@dimen/service_page_inner_margin"
+                        android:layout_weight="1"
+                        android:text="酒店"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/service_text_size"
+                        app:drawableTopCompat="@drawable/pay" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
