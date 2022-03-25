@@ -54,6 +54,7 @@ public class MyApplication extends Application {
     protected boolean login(String id, String password) {
         if (verifyMobileNumber(id)) { // 验证手机号格式
             showToast("正在登录，" + id, Toast.LENGTH_SHORT);
+            // 模拟网络延迟
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
