@@ -40,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                System.out.println(s);
             }
 
             @Override
@@ -48,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 Pattern p = Pattern.compile("[0-9a-zA-Z]"); // 密码框中允许输入的字符
 
                 if (s.length() > 0)
+                    // 匹配最后输入的字符，若不合法，则弹出提示，并标记illegal和flag变量用于修正
                     if (!p.matcher(s.subSequence(s.length() - 1, s.length())).matches()) {
                         illegal = true;
                         flag = s.length() - 1;
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 if (illegal) {
                     illegal = false;
-                    s.delete(flag, flag + 1);
+                    s.delete(flag, flag + 1); // 删除不合法字符
                 }
             }
         });

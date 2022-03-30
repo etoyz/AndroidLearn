@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_find" />
 
     <fragment
-        android:id="@+id/me"
+        android:id="@+id/profile"
         android:name="edu.ytu.logindemo.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />

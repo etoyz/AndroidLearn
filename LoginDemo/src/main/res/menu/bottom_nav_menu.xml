@@ -17,7 +17,7 @@
         android:title="@string/title_find" />
 
     <item
-        android:id="@+id/me"
+        android:id="@+id/profile"
         android:icon="@drawable/profile"
         android:title="我" />
 
