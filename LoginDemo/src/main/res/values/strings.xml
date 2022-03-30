@@ -35,4 +35,8 @@
     <string name="title_profile">我</string>
     <string name="enter_password">请输入密码</string>
     <string name="password">密码</string>
+    <string name="signup_new_account">注册新账号</string>
+    <string name="gender">性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
 </resources>

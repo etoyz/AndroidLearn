@@ -13,6 +13,8 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/backgroud.xml" value="0.234" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_wechat_services.xml" value="0.234" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/find.xml" value="0.121" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/gender_selector.xml" value="0.163" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/gender_selector_border.xml" value="0.163" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/ic__1__.xml" value="0.121" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/ic___.xml" value="0.121" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/ic____.xml" value="0.121" />
@@ -34,6 +36,8 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/activity_launch.xml" value="0.264" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/activity_services.xml" value="0.2418478260869565" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/activity_sign_up.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/app_bar_main.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/content_main.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_address_book.xml" value="0.23958333333333334" />
