@@ -19,6 +19,9 @@ public class LaunchActivity extends AppCompatActivity {
         findViewById(R.id.login_btn).setOnClickListener(view -> {
             startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
         });
+        findViewById(R.id.signup_btn).setOnClickListener(view -> {
+            startActivity(new Intent(LaunchActivity.this, SignUpActivity.class));
+        });
 
         // 若检测到之前登录过，则直接进入首页
         if (application.checkLoginStatus()) {

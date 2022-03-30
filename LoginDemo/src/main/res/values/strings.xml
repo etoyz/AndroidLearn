@@ -17,7 +17,8 @@
     <string name="mobile_number">手机号</string>
     <string name="enter_phone_number">请填写手机号</string>
     <string name="login_tip">上述手机号仅用于登录验证</string>
-    <string name="agree_and_continue">同意并继续</string>
+    <string name="agree_and_continue">继续</string>
+    <string name="continue1">继续</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -35,4 +36,8 @@
     <string name="title_profile">我</string>
     <string name="enter_password">请输入密码</string>
     <string name="password">密码</string>
+    <string name="signup_new_account">注册新账号</string>
+    <string name="gender">性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
 </resources>
