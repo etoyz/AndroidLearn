@@ -3,10 +3,11 @@ package edu.ytu.logindemo;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 public class SettingActivity extends AppCompatActivity {
     private static MyApplication application;
@@ -21,21 +22,18 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
-                builder.setTitle("退出后不会删除任何历史数据，下次登录仍然可以使用本账号。")
-                        .setPositiveButton("退出", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                application.logout();
-                                startActivity(new Intent(SettingActivity.this, LaunchActivity.class));
-                            }
-                        })
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .show();
+                ViewGroup viewGroup = findViewById(android.R.id.content);
+                View dialogView = LayoutInflater.from(SettingActivity.this).inflate(R.layout.dialog_logout, viewGroup, false);
+                AlertDialog dialog = builder.setView(dialogView).create();
+                dialogView.findViewById(R.id.btn_cancel).setOnClickListener(v1 -> {
+                    dialog.dismiss();
+                });
+                dialogView.findViewById(R.id.btn_confirm).setOnClickListener(v1 -> {
+                    dialog.dismiss();
+                    application.logout();
+                    startActivity(new Intent(v.getContext(), LaunchActivity.class));
+                });
+                dialog.show();
             }
         });
     }
