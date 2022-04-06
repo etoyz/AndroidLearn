@@ -56,8 +56,8 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_marginStart="20dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginEnd="7dp"
             android:layout_gravity="center|center_vertical"
             android:contentDescription="avatar"
@@ -68,6 +68,33 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:text="服务">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginStart="20dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="7dp"
+            android:layout_gravity="center|center_vertical"
+            android:contentDescription="avatar"
+            android:src="@drawable/setting" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:text="设置">
 
         </TextView>
     </LinearLayout>
