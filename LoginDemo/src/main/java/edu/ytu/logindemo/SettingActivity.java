@@ -21,7 +21,7 @@ public class SettingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
-                builder.setTitle("是否退出登录？")
+                builder.setTitle("退出后不会删除任何历史数据，下次登录仍然可以使用本账号。")
                         .setPositiveButton("退出", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -32,7 +32,7 @@ public class SettingActivity extends AppCompatActivity {
                         .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
+                                dialog.dismiss();
                             }
                         })
                         .show();
