@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import edu.ytu.logindemo.R;
 import edu.ytu.logindemo.ServiceActivity;
+import edu.ytu.logindemo.SettingActivity;
 
 public class ProfileFragment extends Fragment {
 
@@ -32,6 +33,12 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), ServiceActivity.class));
+            }
+        });
+        view.findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(view.getContext(), SettingActivity.class));
             }
         });
     }

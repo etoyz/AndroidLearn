@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wechat">
         <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -34,7 +37,7 @@
         <activity
             android:name=".ServiceActivity"
             android:exported="true"
-            android:theme="@style/Theme.Wechat.NoActionBar"></activity>
+            android:theme="@style/Theme.Wechat.NoActionBar" />
     </application>
 
 </manifest>
