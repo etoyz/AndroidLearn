@@ -6,14 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/gray">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:theme="@style/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:orientation="horizontal">
 
         <ImageView
@@ -22,9 +19,8 @@
             android:src="@drawable/back" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:text="服务"
             android:gravity="center_vertical|center"
             android:textColor="@android:color/black"
@@ -36,8 +32,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
             android:src="@drawable/more" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <TableLayout
         android:layout_width="match_parent"
