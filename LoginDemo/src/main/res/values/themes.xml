@@ -26,6 +26,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.Wechat.Settings">
+        <item name="colorPrimary">@color/black</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="App.Custom.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <!--        <item name="tint">@color/material_on_background_disabled</item>-->
         <!--        <item name="android:imageButtonStyle">@color/material_on_background_disabled</item>-->

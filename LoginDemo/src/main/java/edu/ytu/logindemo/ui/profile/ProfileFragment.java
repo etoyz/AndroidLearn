@@ -35,7 +35,7 @@ public class ProfileFragment extends Fragment {
                 startActivity(new Intent(view.getContext(), ServiceActivity.class));
             }
         });
-        view.findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.settings_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(view.getContext(), SettingActivity.class));
