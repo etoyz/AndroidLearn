@@ -25,7 +25,7 @@ public class MyApplication extends Application {
         tmpUsers.put("22222222222", "222222");
     }
 
-    protected void showToast(String text, int duration) {
+    public void showToast(String text, int duration) {
         if (toast != null)
             toast.cancel();
         toast = Toast.makeText(getApplicationContext(), text, duration);
