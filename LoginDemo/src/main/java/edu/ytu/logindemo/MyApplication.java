@@ -3,6 +3,10 @@ package edu.ytu.logindemo;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -25,10 +29,14 @@ public class MyApplication extends Application {
         tmpUsers.put("22222222222", "222222");
     }
 
-    public void showToast(String text, int duration) {
+    public void showToast(Context context, String text, long duration) {
         if (toast != null)
             toast.cancel();
-        toast = Toast.makeText(getApplicationContext(), text, duration);
+        toast = new Toast(context);
+        View toastView = LayoutInflater.from(context).inflate(R.layout.toast_wechat, new RelativeLayout(context));
+        TextView toastMessage = toastView.findViewById(R.id.custom_toast_message);
+        toastMessage.setText(text);
+        toast.setView(toastView);
         toast.show();
     }
 
@@ -55,7 +63,7 @@ public class MyApplication extends Application {
 
     protected boolean login(String id, String password) {
         if (verifyMobileNumber(id)) { // 验证手机号格式
-            showToast("正在登录，" + id, Toast.LENGTH_SHORT);
+            showToast(getApplicationContext(), "正在登录，" + id, Toast.LENGTH_SHORT);
             // 模拟网络延迟
             try {
                 Thread.sleep(1000);
@@ -64,14 +72,14 @@ public class MyApplication extends Application {
             }
             if (tmpUsers.containsKey(id) && tmpUsers.containsValue(password)) {
                 credentials.edit().putString("id", id).putString("password", password).apply(); // 存储登录账号信息
-                showToast("登录成功！", Toast.LENGTH_SHORT);
+                showToast(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT);
                 return true;
             } else {
-                showToast("密码错误！", Toast.LENGTH_SHORT);
+                showToast(getApplicationContext(), "密码错误！", Toast.LENGTH_SHORT);
                 return false;
             }
         } else {
-            showToast("手机号无效！", Toast.LENGTH_LONG);
+            showToast(getApplicationContext(), "手机号无效！", Toast.LENGTH_LONG);
             return false;
         }
     }
