@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.TextView;
@@ -34,11 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                        SystemClock.sleep(1000);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -46,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                                     application.showToast(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT, 1);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 } else {
-                                    application.showToast(getApplicationContext(), "密码错误！", Toast.LENGTH_LONG, 2);
+                                    application.showToast(getApplicationContext(), "密码错误！", Toast.LENGTH_SHORT, 2);
                                 }
                             }
                         });
