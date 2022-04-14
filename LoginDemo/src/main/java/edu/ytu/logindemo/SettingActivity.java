@@ -35,16 +35,14 @@ public class SettingActivity extends AppCompatActivity {
                 });
                 // confirm logout event
                 dialogView.findViewById(R.id.btn_confirm).setOnClickListener(v1 -> {
-                    // progress dialog
-                    ProgressDialog progressDialog = new ProgressDialog(SettingActivity.this);
-                    progressDialog.show();
+                    application.showToast(v.getContext(), "正在退出...", 99999);
                     // delay
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            progressDialog.cancel();
                             alertDialog.dismiss();
                             application.logout();
+                            application.showToast(v.getContext(), "已退出！", 200);
                             startActivity(new Intent(v.getContext(), LaunchActivity.class));
                         }
                     }, 1000);

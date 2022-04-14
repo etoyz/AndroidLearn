@@ -72,23 +72,17 @@ public class MyApplication extends Application {
 
     protected boolean login(String id, String password) {
         if (verifyMobileNumber(id)) { // 验证手机号格式
-            showToast(getApplicationContext(), "正在登录，" + id, Toast.LENGTH_SHORT);
-            // 模拟网络延迟
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            showToast(getApplicationContext(), "正在登录，" + id, 500);
             if (tmpUsers.containsKey(id) && tmpUsers.containsValue(password)) {
                 credentials.edit().putString("id", id).putString("password", password).apply(); // 存储登录账号信息
-                showToast(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT);
+                showToast(getApplicationContext(), "登录成功！", 500);
                 return true;
             } else {
-                showToast(getApplicationContext(), "密码错误！", Toast.LENGTH_SHORT);
+                showToast(getApplicationContext(), "密码错误！", 500);
                 return false;
             }
         } else {
-            showToast(getApplicationContext(), "手机号无效！", Toast.LENGTH_LONG);
+            showToast(getApplicationContext(), "手机号无效！", 1000);
             return false;
         }
     }
