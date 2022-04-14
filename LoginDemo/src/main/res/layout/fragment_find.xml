@@ -38,9 +38,9 @@
         android:id="@+id/tp_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        android:layout_marginTop="1dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -66,9 +66,9 @@
         android:id="@+id/cm_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:background="@color/white"
         android:orientation="horizontal"
-        android:layout_marginTop="1dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -94,9 +94,9 @@
         android:id="@+id/player_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_func_divide"
         android:background="@color/white"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
