@@ -5,41 +5,52 @@
     android:orientation="horizontal">
 
     <Chronometer
+        android:id="@+id/cm"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:textSize="40dp"
+        android:layout_weight="1"
         android:gravity="center_vertical|center"
-        android:layout_weight="1"/>
+        android:textSize="40dp" />
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <Button
+            android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="开始"
-            android:backgroundTint="@color/purple_500"/>
+            android:backgroundTint="@color/wechat_green"
+            android:text="开始" />
+
         <Button
+            android:id="@+id/pause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="暂停"
-            android:backgroundTint="@color/purple_500"/>
+            android:backgroundTint="@color/wechat_green"
+            android:text="暂停" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical">
+
         <Button
+            android:id="@+id/restart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重置"
-            android:backgroundTint="@color/purple_500"/>
+            android:backgroundTint="@color/wechat_green"
+            android:text="重置" />
+
         <Button
+            android:id="@+id/stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="停止"
-            android:backgroundTint="@color/purple_500"/>
+            android:backgroundTint="@color/wechat_green"
+            android:text="停止" />
     </LinearLayout>
 </LinearLayout>
