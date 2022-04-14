@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import java.util.HashMap;
@@ -26,6 +27,12 @@ public class MyApplication extends Application {
     private static Map<String, String> tmpUsers = new HashMap<>(); // 模拟数据库，存储用户账号
 
     @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        reloadTheme();
+        super.onConfigurationChanged(newConfig);
+    }
+
+    @Override
     public void onCreate() {
         super.onCreate();
         // 获取本地暂存的数据
@@ -34,6 +41,8 @@ public class MyApplication extends Application {
         // 临时创建两个可以登录的账号
         tmpUsers.put("11111111111", "111111");
         tmpUsers.put("22222222222", "222222");
+        //
+        reloadTheme();
     }
 
     public void showToast(Context context, String text, int duration, int mode) {
