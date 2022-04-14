@@ -60,6 +60,7 @@ public class SettingActivity extends AppCompatActivity {
 
         // 深色模式
         SwitchMaterial night_mode_switch = findViewById(R.id.night_mode);
+        night_mode_switch.setChecked(application.getThemeRes() == R.style.Theme_Wechat_Night);
         night_mode_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
