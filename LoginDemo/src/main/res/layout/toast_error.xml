@@ -6,15 +6,16 @@
     android:background="@drawable/bg_toast"
     android:orientation="vertical">
 
-    <ProgressBar
+    <ImageView
         android:id="@+id/custom_toast_image"
         android:layout_width="80dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:paddingTop="20dp"
         android:layout_weight="1"
+        android:contentDescription="Hello world"
         android:indeterminateTint="@color/white"
-        android:contentDescription="Hello world" />
+        android:paddingTop="20dp"
+        android:src="@drawable/error" />
 
     <TextView
         android:id="@+id/custom_toast_message"

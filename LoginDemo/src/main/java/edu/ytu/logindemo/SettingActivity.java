@@ -35,14 +35,14 @@ public class SettingActivity extends AppCompatActivity {
                 });
                 // confirm logout event
                 dialogView.findViewById(R.id.btn_confirm).setOnClickListener(v1 -> {
-                    application.showToast(v.getContext(), "正在退出...", 99999);
+                    application.showToast(v.getContext(), "正在退出...", 99999, 3);
                     // delay
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             alertDialog.dismiss();
                             application.logout();
-                            application.showToast(v.getContext(), "已退出！", 200);
+                            application.showToast(v.getContext(), "已退出！", 200, 1);
                             startActivity(new Intent(v.getContext(), LaunchActivity.class));
                         }
                     }, 1000);

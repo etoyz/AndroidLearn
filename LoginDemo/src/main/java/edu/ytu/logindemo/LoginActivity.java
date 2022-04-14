@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (!p.matcher(s.subSequence(s.length() - 1, s.length())).matches()) {
                         illegal = true;
                         flag = s.length() - 1;
-                        application.showToast(LoginActivity.this, "只允许输入数字和大小写字母！！", 500);
+                        application.showToast(LoginActivity.this, "只允许输入数字和大小写字母！！", 500, 2);
                     }
             }
 

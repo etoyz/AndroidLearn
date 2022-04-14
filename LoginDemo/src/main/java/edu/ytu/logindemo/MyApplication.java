@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.LayoutRes;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -31,11 +33,23 @@ public class MyApplication extends Application {
         tmpUsers.put("22222222222", "222222");
     }
 
-    public void showToast(Context context, String text, long duration) {
+    public void showToast(Context context, String text, long duration, int mode) {
         if (toast != null)
             toast.cancel();
         toast = new Toast(context);
-        View toastView = LayoutInflater.from(context).inflate(R.layout.toast_wechat, new RelativeLayout(context));
+        @LayoutRes int toastRes = R.layout.toast_progress;
+        switch (mode) {
+            case 1:
+                toastRes = R.layout.toast_success;
+                break;
+            case 2:
+                toastRes = R.layout.toast_error;
+                break;
+            case 3:
+                toastRes = R.layout.toast_progress;
+                break;
+        }
+        View toastView = LayoutInflater.from(context).inflate(toastRes, new RelativeLayout(context));
         TextView toastMessage = toastView.findViewById(R.id.custom_toast_message);
         toastMessage.setText(text);
         toast.setView(toastView);
@@ -72,17 +86,17 @@ public class MyApplication extends Application {
 
     protected boolean login(String id, String password) {
         if (verifyMobileNumber(id)) { // 验证手机号格式
-            showToast(getApplicationContext(), "正在登录，" + id, 500);
+            showToast(getApplicationContext(), "正在登录，" + id, 500, 3);
             if (tmpUsers.containsKey(id) && tmpUsers.containsValue(password)) {
                 credentials.edit().putString("id", id).putString("password", password).apply(); // 存储登录账号信息
-                showToast(getApplicationContext(), "登录成功！", 500);
+                showToast(getApplicationContext(), "登录成功！", 500, 1);
                 return true;
             } else {
-                showToast(getApplicationContext(), "密码错误！", 500);
+                showToast(getApplicationContext(), "密码错误！", 500, 2);
                 return false;
             }
         } else {
-            showToast(getApplicationContext(), "手机号无效！", 1000);
+            showToast(getApplicationContext(), "手机号无效！", 1000, 2);
             return false;
         }
     }
