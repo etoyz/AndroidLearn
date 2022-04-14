@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -86,6 +86,34 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:text="秒表">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/player_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center|center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="7dp"
+            android:contentDescription="avatar"
+            android:src="@drawable/pay" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:text="播放器">
 
         </TextView>
     </LinearLayout>
