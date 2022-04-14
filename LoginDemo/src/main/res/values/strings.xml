@@ -17,7 +17,7 @@
     <string name="mobile_number">手机号</string>
     <string name="enter_phone_number">请填写手机号</string>
     <string name="login_tip">上述手机号仅用于登录验证</string>
-    <string name="agree_and_continue">继续</string>
+    <string name="agree_and_continue">同意并继续</string>
     <string name="continue1">继续</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
