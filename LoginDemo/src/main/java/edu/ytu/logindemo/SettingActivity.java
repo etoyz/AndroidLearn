@@ -1,25 +1,30 @@
 package edu.ytu.logindemo;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingActivity extends AppCompatActivity {
     private static MyApplication application;
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         application = (MyApplication) getApplication();
+        setTheme(application.getThemeRes());
         setContentView(R.layout.activity_setting);
 
         // 退出登录按钮
@@ -50,6 +55,19 @@ public class SettingActivity extends AppCompatActivity {
                     }, 1000);
                 });
                 alertDialog.show();
+            }
+        });
+
+        // 深色模式
+        SwitchMaterial night_mode_switch = findViewById(R.id.night_mode);
+        night_mode_switch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (night_mode_switch.isChecked())
+                    application.setTheme(R.style.Theme_Wechat_Night);
+                else
+                    application.setTheme(R.style.Theme_Wechat);
+                recreate();
             }
         });
     }

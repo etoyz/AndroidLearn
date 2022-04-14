@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.LayoutRes;
+import androidx.annotation.StyleRes;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,13 +22,15 @@ import java.util.regex.Pattern;
 public class MyApplication extends Application {
     private static Toast toast;
     private static SharedPreferences credentials;
+    private static SharedPreferences theme;
     private static Map<String, String> tmpUsers = new HashMap<>(); // 模拟数据库，存储用户账号
 
     @Override
     public void onCreate() {
         super.onCreate();
-        // 获取本地暂存的数据，用于验证登录状态
+        // 获取本地暂存的数据
         credentials = this.getSharedPreferences("CREDENTIALS", Context.MODE_PRIVATE);
+        theme = this.getSharedPreferences("THEME", Context.MODE_PRIVATE);
         // 临时创建两个可以登录的账号
         tmpUsers.put("11111111111", "111111");
         tmpUsers.put("22222222222", "222222");
@@ -85,5 +88,13 @@ public class MyApplication extends Application {
             return true;
         } else
             return false;
+    }
+
+    public void setTheme(@StyleRes int resId) {
+        theme.edit().putInt("resId", resId).apply();
+    }
+
+    public int getThemeRes() {
+        return theme.getInt("resId", R.style.Theme_Wechat);
     }
 }
