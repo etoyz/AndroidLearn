@@ -71,5 +71,7 @@ public class SettingActivity extends AppCompatActivity {
                 recreate();
             }
         });
+
+        findViewById(R.id.back).setOnClickListener(v -> finish());
     }
 }

@@ -12,5 +12,7 @@ public class ServiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         application = (MyApplication) getApplication();
         setContentView(R.layout.activity_services);
+
+        findViewById(R.id.back).setOnClickListener(v -> finish());
     }
 }
