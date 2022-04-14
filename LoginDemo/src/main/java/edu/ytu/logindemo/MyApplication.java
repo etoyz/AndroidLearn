@@ -3,6 +3,8 @@ package edu.ytu.logindemo;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -37,7 +39,14 @@ public class MyApplication extends Application {
         TextView toastMessage = toastView.findViewById(R.id.custom_toast_message);
         toastMessage.setText(text);
         toast.setView(toastView);
+        toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
+        (new Handler()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                toast.cancel();
+            }
+        }, duration);
     }
 
     protected boolean verifyMobileNumber(String s) {

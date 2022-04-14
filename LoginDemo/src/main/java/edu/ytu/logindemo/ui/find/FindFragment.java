@@ -42,13 +42,15 @@ public class FindFragment extends Fragment {
             DatePickerDialog dialog = new DatePickerDialog(getContext());
             dialog.setTitle("请选择日期");
             dialog.show();
-            dialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> application.showToast(v.getContext(), year + "年" + month + "月" + dayOfMonth + "日！", 1000));
+            dialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
+                application.showToast(v.getContext(), year + "年" + month + "月" + dayOfMonth + "日！", 500);
+            });
         });
 
         // 时间选择按钮
         view.findViewById(R.id.tp_btn).setOnClickListener(v -> {
             TimePickerDialog dialog = new TimePickerDialog(getContext(), (view12, hourOfDay, minute) -> {
-                application.showToast(v.getContext(), hourOfDay + "时" + minute + "分！", 1000);
+                application.showToast(v.getContext(), hourOfDay + "时" + minute + "分！", 500);
             }, 0, 0, true);
             dialog.setTitle("请选择时间");
             dialog.show();
