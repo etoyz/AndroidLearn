@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = passwordInput.getText().toString();
             // 登录应用流程
             if (application.verifyMobileNumber(mobileNumber)) { // 验证手机号格式
-                application.showToast(getApplicationContext(), "正在登录，" + mobileNumber, 1000, 3);
+                application.showToast(getApplicationContext(), "正在登录，" + mobileNumber, Toast.LENGTH_LONG, 3);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -43,17 +43,17 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 if (application.login(mobileNumber, password)) {
-                                    application.showToast(getApplicationContext(), "登录成功！", 1000, 1);
+                                    application.showToast(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT, 1);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 } else {
-                                    application.showToast(getApplicationContext(), "密码错误！", 1000, 2);
+                                    application.showToast(getApplicationContext(), "密码错误！", Toast.LENGTH_LONG, 2);
                                 }
                             }
                         });
                     }
                 }).start();
             } else {
-                application.showToast(getApplicationContext(), "手机号无效！", 1000, 2);
+                application.showToast(getApplicationContext(), "手机号无效！", Toast.LENGTH_LONG, 2);
             }
         });
         // 密码只允许输入数字和大小写字母
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (!p.matcher(s.subSequence(s.length() - 1, s.length())).matches()) {
                         illegal = true;
                         flag = s.length() - 1;
-                        application.showToast(LoginActivity.this, "只允许输入数字和大小写字母！！", 500, 2);
+                        application.showToast(LoginActivity.this, "只允许输入数字和大小写字母！！", Toast.LENGTH_LONG, 2);
                     }
             }
 

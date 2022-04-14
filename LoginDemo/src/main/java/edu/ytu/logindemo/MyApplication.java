@@ -33,7 +33,7 @@ public class MyApplication extends Application {
         tmpUsers.put("22222222222", "222222");
     }
 
-    public void showToast(Context context, String text, long duration, int mode) {
+    public void showToast(Context context, String text, int duration, int mode) {
         if (toast != null)
             toast.cancel();
         toast = new Toast(context);
@@ -54,13 +54,8 @@ public class MyApplication extends Application {
         toastMessage.setText(text);
         toast.setView(toastView);
         toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(duration);
         toast.show();
-        (new Handler()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                toast.cancel();
-            }
-        }, duration);
     }
 
     protected boolean verifyMobileNumber(String s) {

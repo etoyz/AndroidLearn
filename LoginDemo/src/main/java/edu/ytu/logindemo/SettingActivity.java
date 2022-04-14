@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity {
     private static MyApplication application;
@@ -35,14 +36,14 @@ public class SettingActivity extends AppCompatActivity {
                 });
                 // confirm logout event
                 dialogView.findViewById(R.id.btn_confirm).setOnClickListener(v1 -> {
-                    application.showToast(v.getContext(), "正在退出...", 99999, 3);
+                    application.showToast(v.getContext(), "正在退出...", Toast.LENGTH_LONG, 3);
                     // delay
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             alertDialog.dismiss();
                             application.logout();
-                            application.showToast(v.getContext(), "已退出！", 200, 1);
+                            application.showToast(v.getContext(), "已退出！", Toast.LENGTH_SHORT, 1);
                             startActivity(new Intent(v.getContext(), LaunchActivity.class));
                         }
                     }, 1000);

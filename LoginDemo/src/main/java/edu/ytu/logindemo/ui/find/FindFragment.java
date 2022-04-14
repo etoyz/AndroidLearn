@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Chronometer;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,14 +44,14 @@ public class FindFragment extends Fragment {
             dialog.setTitle("请选择日期");
             dialog.show();
             dialog.setOnDateSetListener((view1, year, month, dayOfMonth) -> {
-                application.showToast(v.getContext(), year + "年" + month + "月" + dayOfMonth + "日！", 1000, 1);
+                application.showToast(v.getContext(), year + "年" + month + "月" + dayOfMonth + "日！", Toast.LENGTH_LONG, 1);
             });
         });
 
         // 时间选择按钮
         view.findViewById(R.id.tp_btn).setOnClickListener(v -> {
             TimePickerDialog dialog = new TimePickerDialog(getContext(), (view12, hourOfDay, minute) -> {
-                application.showToast(v.getContext(), hourOfDay + "时" + minute + "分！", 1000, 1);
+                application.showToast(v.getContext(), hourOfDay + "时" + minute + "分！", Toast.LENGTH_LONG, 1);
             }, 0, 0, true);
             dialog.setTitle("请选择时间");
             dialog.show();
