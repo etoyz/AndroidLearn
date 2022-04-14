@@ -22,6 +22,7 @@ public class SettingActivity extends AppCompatActivity {
         application = (MyApplication) getApplication();
         setContentView(R.layout.activity_setting);
 
+        // 退出登录按钮
         findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

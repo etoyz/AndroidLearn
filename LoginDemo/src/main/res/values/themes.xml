@@ -15,6 +15,10 @@
 <!--        <item name="alertDialogStyle">@drawable/bg_dialog_progress</item>-->
     </style>
 
+    <style name="SwitchTheme" >
+        <item name="colorControlActivated">@color/wechat_green</item>
+    </style>
+
     <style name="actionBarTheme">
         <item name="colorPrimary">@color/gray</item>
         <item name="colorPrimaryVariant">@color/gray</item>

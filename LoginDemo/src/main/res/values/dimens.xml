@@ -12,4 +12,5 @@
     <dimen name="service_page_inner_margin">5dp</dimen>
     <dimen name="service_page_padding">20dp</dimen>
     <dimen name="service_text_size">16sp</dimen>
+    <dimen name="padding_option">8dp</dimen>
 </resources>

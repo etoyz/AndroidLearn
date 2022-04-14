@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@color/gray"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -31,12 +33,45 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/logout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:gravity="center_vertical"
+        android:minHeight="55dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_option"
+            android:paddingEnd="@dimen/padding_option"
+            android:text="深色模式"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/night_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_option"
+            android:paddingEnd="@dimen/padding_option"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:theme="@style/SwitchTheme" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
         android:gravity="center|center_horizontal"
-        android:layout_below="@+id/toolbar"
         android:minHeight="55dp"
         android:orientation="horizontal">
 
@@ -44,9 +79,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|center_vertical"
-            android:textColor="@android:color/holo_red_light"
             android:text="退出登录"
-            android:textSize="25sp"/>
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="25sp" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
