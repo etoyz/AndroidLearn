@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|center"
-            android:text="服务"
+            android:text="设置"
             android:textColor="@android:color/black"
             android:textSize="@dimen/toolbar_title_text_size"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -33,9 +33,49 @@
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_option"
+        android:paddingEnd="@dimen/padding_option"
+        android:text="深色模式"
+        android:textSize="@dimen/description_option" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:minHeight="55dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_option"
+            android:paddingEnd="@dimen/padding_option"
+            android:text="跟随系统"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/night_mode_follow_sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_option"
+            android:paddingEnd="@dimen/padding_option"
+            android:theme="@style/SwitchTheme" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:minHeight="55dp"
@@ -51,7 +91,7 @@
             android:textSize="25sp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
@@ -61,8 +101,6 @@
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/padding_option"
             android:paddingEnd="@dimen/padding_option"
-            android:textOff="OFF"
-            android:textOn="ON"
             android:theme="@style/SwitchTheme" />
     </LinearLayout>
 

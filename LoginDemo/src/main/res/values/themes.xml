@@ -46,7 +46,7 @@
     </style>
 
     <style name="Theme.Wechat.Settings">
-        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/gray</item>
         <item name="windowNoTitle">true</item>
     </style>
 

@@ -24,7 +24,6 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         application = (MyApplication) getApplication();
-        setTheme(application.getThemeRes());
         setContentView(R.layout.activity_setting);
 
         // 退出登录按钮
@@ -59,16 +58,34 @@ public class SettingActivity extends AppCompatActivity {
         });
 
         // 深色模式
+        SwitchMaterial night_mode_follow_sys_switch = findViewById(R.id.night_mode_follow_sys);
         SwitchMaterial night_mode_switch = findViewById(R.id.night_mode);
-        night_mode_switch.setChecked(application.getThemeRes() == R.style.Theme_Wechat_Night);
+        night_mode_follow_sys_switch.setChecked(application.isThemeFollowSystem());
+        night_mode_switch.setChecked(application.isActivatedThemeDark());
+        night_mode_switch.setEnabled(!application.isThemeFollowSystem());
+
+        night_mode_follow_sys_switch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (night_mode_follow_sys_switch.isChecked()) {
+                    application.setThemeFollowSystem(true);
+                    night_mode_switch.setEnabled(false);
+                } else {
+                    application.setThemeFollowSystem(false);
+                    night_mode_switch.setEnabled(true);
+                }
+                application.reloadTheme();
+            }
+        });
         night_mode_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (night_mode_switch.isChecked())
-                    application.setTheme(R.style.Theme_Wechat_Night);
-                else
-                    application.setTheme(R.style.Theme_Wechat);
-                recreate();
+                if (night_mode_switch.isChecked()) {
+                    application.setThemeDark(true);
+                } else {
+                    application.setThemeDark(false);
+                }
+                application.reloadTheme();
             }
         });
 
