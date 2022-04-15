@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
 
 public class MyApplication extends Application {
     private static Toast toast;
-    Dialog progressDialog;
     private static SharedPreferences credentials;
     private static SharedPreferences preferenceTheme;
     private static Map<String, String> tmpUsers = new HashMap<>(); // 模拟数据库，存储用户账号
@@ -49,20 +48,17 @@ public class MyApplication extends Application {
         reloadTheme();
     }
 
-    public void showProgress(Context context, String text) {
+    public Dialog showProgress(Context context, String text) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View progressView = inflater.inflate(R.layout.progress_spin, new RelativeLayout(context));
         TextView progressMessage = progressView.findViewById(R.id.custom_toast_message);
         progressMessage.setText(text);
-        progressDialog = new AlertDialog.Builder(context).setView(progressView).setCancelable(false).create();
+        Dialog progressDialog = new AlertDialog.Builder(context).setView(progressView).setCancelable(false).create();
         progressDialog.show();
         Window window = progressDialog.getWindow();
         window.setLayout(550, 550);
         window.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.empty)); //设置背景透明
-    }
-
-    public void closeProgress() {
-        progressDialog.dismiss();
+        return progressDialog;
     }
 
     public void showToast(Context context, String text, int duration, int mode) {

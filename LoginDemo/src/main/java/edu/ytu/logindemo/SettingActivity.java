@@ -4,7 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -42,12 +42,12 @@ public class SettingActivity extends AppCompatActivity {
                 // confirm logout event
                 dialogView.findViewById(R.id.btn_confirm).setOnClickListener(v1 -> {
                     alertDialog.dismiss();
-                    application.showProgress(v.getContext(), "正在退出...");
+                    Dialog progressDialog = application.showProgress(v.getContext(), "正在退出...");
                     // delay
                     (new Handler()).postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            application.closeProgress();
+                            progressDialog.dismiss();
                             application.logout();
                             application.showToast(v.getContext(), "已退出！", Toast.LENGTH_SHORT, 1);
                             startActivity(new Intent(v.getContext(), LaunchActivity.class));
