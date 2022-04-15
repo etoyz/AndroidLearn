@@ -43,10 +43,10 @@ public class LoginActivity extends AppCompatActivity {
                             public void run() {
                                 progress.dismiss();
                                 if (application.login(mobileNumber, password)) {
-                                    application.showAlert(getApplicationContext(), "登录成功！", 1);
+                                    application.showAlert(LoginActivity.this, "登录成功！", 1);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 } else {
-                                    application.showAlert(getApplicationContext(), "密码错误！", 2);
+                                    application.showAlert(LoginActivity.this, "密码错误！", 2);
                                 }
                             }
                         });
