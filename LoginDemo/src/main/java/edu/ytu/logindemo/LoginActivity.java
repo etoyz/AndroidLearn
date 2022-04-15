@@ -32,11 +32,11 @@ public class LoginActivity extends AppCompatActivity {
             // 登录应用流程
             if (application.verifyMobileNumber(mobileNumber)) { // 验证手机号格式
                 application.showToast(getApplicationContext(), "正在登录，" + mobileNumber, Toast.LENGTH_LONG, 3);
-                new Thread(new Runnable() {
+                new Thread(new Runnable() { // 此线程向后台请求登录
                     @Override
                     public void run() {
-                        SystemClock.sleep(1000);
-                        runOnUiThread(new Runnable() {
+                        SystemClock.sleep(1000); // 模拟网络延迟
+                        runOnUiThread(new Runnable() { // 登录成功后，在UI线程更改页面
                             @Override
                             public void run() {
                                 if (application.login(mobileNumber, password)) {
