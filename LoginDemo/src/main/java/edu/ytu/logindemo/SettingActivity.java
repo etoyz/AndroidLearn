@@ -49,7 +49,7 @@ public class SettingActivity extends AppCompatActivity {
                         public void run() {
                             progressDialog.dismiss();
                             application.logout();
-                            application.showToast(v.getContext(), "已退出！", Toast.LENGTH_SHORT, 1);
+                            application.showAlert(v.getContext(), "已退出！", 1);
                             startActivity(new Intent(v.getContext(), LaunchActivity.class));
                         }
                     }, 1000);

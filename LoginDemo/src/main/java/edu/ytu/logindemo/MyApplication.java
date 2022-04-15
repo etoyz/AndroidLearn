@@ -61,6 +61,34 @@ public class MyApplication extends Application {
         return progressDialog;
     }
 
+    public AlertDialog showAlert(Context context, String text, int mode) {
+        @LayoutRes int alertLayout = R.layout.toast_progress;
+        switch (mode) {
+            case 1:
+                alertLayout = R.layout.toast_success;
+                break;
+            case 2:
+                alertLayout = R.layout.toast_error;
+                break;
+            case 3:
+                alertLayout = R.layout.toast_progress;
+                break;
+        }
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View alertView = inflater.inflate(alertLayout, new RelativeLayout(context));
+        TextView toastMessage = alertView.findViewById(R.id.custom_toast_message);
+        toastMessage.setText(text);
+        AlertDialog dialog = new AlertDialog.Builder(context).setView(alertView).setCancelable(true).create();
+
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.setLayout(550, 550);
+        window.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.empty)); //设置背景透明
+        return dialog;
+    }
+
+    @Deprecated
     public void showToast(Context context, String text, int duration, int mode) {
         if (toast != null)
             toast.cancel();

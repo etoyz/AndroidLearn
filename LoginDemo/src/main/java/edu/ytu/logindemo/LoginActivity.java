@@ -43,17 +43,17 @@ public class LoginActivity extends AppCompatActivity {
                             public void run() {
                                 progress.dismiss();
                                 if (application.login(mobileNumber, password)) {
-                                    application.showToast(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT, 1);
+                                    application.showAlert(getApplicationContext(), "登录成功！", 1);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 } else {
-                                    application.showToast(getApplicationContext(), "密码错误！", Toast.LENGTH_SHORT, 2);
+                                    application.showAlert(getApplicationContext(), "密码错误！", 2);
                                 }
                             }
                         });
                     }
                 }).start();
             } else {
-                application.showToast(getApplicationContext(), "手机号无效！", Toast.LENGTH_LONG, 2);
+                application.showAlert(getApplicationContext(), "手机号无效！", 2);
             }
         });
         // 密码只允许输入数字和大小写字母
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (!p.matcher(s.subSequence(s.length() - 1, s.length())).matches()) {
                         illegal = true;
                         flag = s.length() - 1;
-                        application.showToast(LoginActivity.this, "只允许输入数字和大小写字母！！", Toast.LENGTH_LONG, 2);
+                        application.showAlert(LoginActivity.this, "只允许输入数字和大小写字母！！", 2);
                     }
             }
 
