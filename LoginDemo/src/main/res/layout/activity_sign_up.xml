@@ -19,7 +19,6 @@
         android:layout_weight="1"
         android:text="@string/signup_new_account"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="40sp" />
 
     <!--使用相对布局设计输入框部分，更容易对齐每个元素，使得看起来更协调-->
@@ -36,7 +35,6 @@
             android:layout_marginStart="30dp"
             android:labelFor="@+id/location_input"
             android:text="@string/country_or_region"
-            android:textColor="@color/black"
             android:textSize="26sp" />
 
         <EditText
@@ -75,7 +73,6 @@
             android:layout_alignStart="@+id/i11"
             android:labelFor="@+id/phone_input"
             android:text="@string/mobile_number"
-            android:textColor="@color/black"
             android:textSize="26sp" />
 
         <EditText
@@ -112,7 +109,6 @@
             android:layout_alignStart="@+id/i11"
             android:labelFor="@+id/password_input"
             android:text="@string/password"
-            android:textColor="@color/black"
             android:textSize="26sp" />
 
         <EditText
@@ -148,7 +144,6 @@
             android:layout_marginTop="20dp"
             android:labelFor="@+id/gender"
             android:text="@string/gender"
-            android:textColor="@color/black"
             android:textSize="26sp" />
 
         <RadioGroup
@@ -184,13 +179,13 @@
 
         <TextView
             android:id="@+id/reset_input"
-            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/i41"
             android:layout_alignStart="@id/i11"
-            android:textColor="?attr/actionModeSplitBackground"
-            android:text="重新输入">
+            android:layout_marginTop="5dp"
+            android:text="重新输入"
+            android:textColor="?attr/actionModeSplitBackground">
 
         </TextView>
     </RelativeLayout>

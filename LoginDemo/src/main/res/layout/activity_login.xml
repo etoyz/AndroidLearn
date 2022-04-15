@@ -19,7 +19,6 @@
         android:layout_weight="1"
         android:text="@string/login_by_phone_number"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="40sp" />
 
     <!--使用相对布局设计输入框部分，更容易对齐每个元素，使得看起来更协调-->
@@ -36,8 +35,8 @@
             android:layout_marginStart="30dp"
             android:labelFor="@+id/location_input"
             android:text="@string/country_or_region"
-            android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/location_input"
@@ -75,8 +74,8 @@
             android:layout_alignStart="@+id/i11"
             android:labelFor="@+id/phone_input"
             android:text="@string/mobile_number"
-            android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/phone_input"
@@ -112,8 +111,8 @@
             android:layout_alignStart="@+id/i11"
             android:labelFor="@+id/password_input"
             android:text="@string/password"
-            android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/password_input"
@@ -126,7 +125,6 @@
             android:background="@null"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            android:textColor="@android:color/darker_gray"
             android:textSize="25sp" />
 
         <View
