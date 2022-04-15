@@ -25,7 +25,6 @@ public class LaunchActivity extends AppCompatActivity {
 
         // 若检测到之前登录过，则直接进入首页
         if (application.checkLoginStatus()) {
-            application.showAlert(LaunchActivity.this, "欢迎回来！", 1);
             startActivity(new Intent(this, MainActivity.class));
         }
     }

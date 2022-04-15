@@ -35,7 +35,7 @@ public class MyMessageRecyclerViewAdapter extends RecyclerView.Adapter<MyMessage
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.avatar.setImageResource(R.drawable.wechat_home);
+        holder.avatar.setImageResource(R.drawable.avatar);
         holder.remark.setText(mValues.get(position).remark);
         holder.preview.setText(mValues.get(position).preview);
     }

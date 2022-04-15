@@ -49,7 +49,6 @@ public class SettingActivity extends AppCompatActivity {
                         public void run() {
                             progressDialog.dismiss();
                             application.logout();
-                            application.showAlert(v.getContext(), "已退出！", 1);
                             startActivity(new Intent(v.getContext(), LaunchActivity.class));
                         }
                     }, 1000);
