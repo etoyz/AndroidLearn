@@ -12,8 +12,7 @@
         android:theme="@style/Theme.Wechat">
         <activity
             android:name=".SettingActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Wechat.Settings"/>
+            android:exported="false" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
@@ -23,12 +22,10 @@
             android:label="@string/title_activity_main" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Wechat.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name=".LaunchActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Wechat.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,8 +34,7 @@
         </activity>
         <activity
             android:name=".ServiceActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Wechat.NoActionBar" />
+            android:exported="false" />
     </application>
 
 </manifest>
