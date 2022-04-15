@@ -2,6 +2,7 @@ package edu.ytu.logindemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -31,7 +32,8 @@ public class LoginActivity extends AppCompatActivity {
             String password = passwordInput.getText().toString();
             // 登录应用流程
             if (application.verifyMobileNumber(mobileNumber)) { // 验证手机号格式
-                application.showToast(getApplicationContext(), "正在登录，" + mobileNumber, Toast.LENGTH_LONG, 3);
+                Dialog progress = application.showProgress(this, "正在登录，" + mobileNumber);
+
                 new Thread(new Runnable() { // 此线程向后台请求登录
                     @Override
                     public void run() {
@@ -39,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() { // 登录成功后，在UI线程更改页面
                             @Override
                             public void run() {
+                                progress.dismiss();
                                 if (application.login(mobileNumber, password)) {
                                     application.showToast(getApplicationContext(), "登录成功！", Toast.LENGTH_SHORT, 1);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
