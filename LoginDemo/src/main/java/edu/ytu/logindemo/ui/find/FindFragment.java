@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Chronometer;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -102,6 +103,15 @@ public class FindFragment extends Fragment {
             cmDialogView.findViewById(R.id.pause).setOnClickListener(listener);
             cmDialogView.findViewById(R.id.stop).setOnClickListener(listener);
             cmDialogView.findViewById(R.id.restart).setOnClickListener(listener);
+        });
+
+        // 播放器
+        view.findViewById(R.id.player_btn).setOnClickListener(v -> {
+            // 弹窗
+            View playerDialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.layout_player, new RelativeLayout(getContext()), false);
+            AlertDialog dialog = new AlertDialog.Builder(view.getContext()).setView(playerDialogView).create();
+            dialog.show();
+
         });
     }
 }

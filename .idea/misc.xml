@@ -17,6 +17,7 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_toast.xml" value="0.116" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_wechat_pay.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_wechat_services.xml" value="0.234" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/empty.xml" value="0.1035" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/error.xml" value="0.116" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/find.xml" value="0.121" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/gender_selector.xml" value="0.163" />
@@ -65,7 +66,9 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/layout.xml" value="0.264" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/layout2.xml" value="0.14947916666666666" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/layout_chronometer.xml" value="0.1" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/layout_player.xml" value="0.1933876811594203" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/nav_header_main.xml" value="0.2484375" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/progress_spin.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/services.xml" value="0.2" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/toast_error.xml" value="0.22327898550724637" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/toast_progress.xml" value="0.22327898550724637" />
