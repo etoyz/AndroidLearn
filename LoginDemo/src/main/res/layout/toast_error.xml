@@ -4,7 +4,8 @@
     android:layout_width="200dp"
     android:layout_height="200dp"
     android:background="@drawable/bg_toast"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:theme="@style/ToastTheme">
 
     <ImageView
         android:id="@+id/custom_toast_image"

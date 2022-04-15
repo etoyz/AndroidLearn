@@ -18,6 +18,11 @@
         <item name="colorControlActivated">@color/wechat_green</item>
     </style>
 
+    <style name="ToastTheme">
+        <item name="colorPrimary">#424040</item>
+        <item name="colorSecondary">@color/white</item>
+    </style>
+
     <style name="actionBarTheme" parent="Theme.Wechat">
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
