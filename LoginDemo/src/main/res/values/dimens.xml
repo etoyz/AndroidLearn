@@ -18,4 +18,5 @@
     <dimen name="nav_height">57dp</dimen>
     <dimen name="text_size_option">21sp</dimen>
     <dimen name="image_size_option">29dp</dimen>
+    <dimen name="height_option">55dp</dimen>
 </resources>
