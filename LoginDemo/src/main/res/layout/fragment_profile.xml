@@ -36,14 +36,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="永远相信光"
-                android:textSize="28dp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="微信号：XXXXXXXX"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
