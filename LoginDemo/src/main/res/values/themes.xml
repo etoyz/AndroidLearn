@@ -12,8 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
 
+    <!-- 一些组件的主题 -->
     <style name="SwitchTheme">
         <item name="colorControlActivated">@color/wechat_green</item>
     </style>
@@ -27,20 +29,16 @@
         <item name="colorPrimary">@color/black</item>
     </style>
 
-    <style name="actionBarTheme">
-        <item name="colorPrimary">@color/gray</item>
-        <item name="colorPrimaryVariant">@color/gray</item>
-        <item name="colorOnPrimary">@color/gray</item>
-    </style>
-
+    <!-- 一些页面的主题 -->
     <style name="Theme.Wechat.Settings" parent="Theme.Wechat">
         <item name="colorPrimary">@color/gray</item>
         <item name="windowNoTitle">true</item>
     </style>
 
+    <!-- 底部导航栏的主题 -->
     <style name="BottomNavigationTheme" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@color/wechat_green</item>
-        <item name="android:textColorSecondary">@color/black</item>
+        <item name="colorSecondary">@color/purple_500</item>
     </style>
 
 </resources>

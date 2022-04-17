@@ -57,7 +57,7 @@ public class MyApplication extends Application {
         progressDialog.show();
         Window window = progressDialog.getWindow();
         window.setLayout(550, 550);
-        window.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.empty)); //设置背景透明
+        window.setBackgroundDrawable(getResources().getDrawable(R.drawable.empty)); //设置背景透明
         return progressDialog;
     }
 
@@ -84,7 +84,7 @@ public class MyApplication extends Application {
         dialog.show();
         Window window = dialog.getWindow();
         window.setLayout(550, 550);
-        window.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.empty)); //设置背景透明
+        window.setBackgroundDrawable(getResources().getDrawable(R.drawable.empty)); //设置背景透明
         return dialog;
     }
 

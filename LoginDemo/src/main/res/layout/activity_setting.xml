@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:theme="@style/actionBarTheme">
+        android:theme="@style/ActionBarTheme">
 
         <ImageView
             android:id="@+id/back"

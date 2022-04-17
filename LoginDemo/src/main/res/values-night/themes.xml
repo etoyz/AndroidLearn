@@ -27,7 +27,7 @@
         <item name="colorPrimary">@color/white</item>
     </style>
 
-    <style name="actionBarTheme" parent="Theme.Wechat">
+    <style name="ActionBarTheme" parent="Theme.Wechat">
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/black</item>
