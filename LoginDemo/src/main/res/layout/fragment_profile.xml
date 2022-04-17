@@ -36,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="永远相信光"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
@@ -43,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="微信号：XXXXXXXX"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
@@ -70,7 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="服务">
+            android:text="服务"
+            android:textColor="?android:attr/textColorPrimary">
 
         </TextView>
     </LinearLayout>
@@ -98,7 +101,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="设置">
+            android:text="设置"
+            android:textColor="?android:attr/textColorPrimary">
 
         </TextView>
     </LinearLayout>

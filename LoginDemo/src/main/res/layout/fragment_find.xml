@@ -29,7 +29,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="日期选择">
+            android:text="日期选择"
+            android:textColor="?android:attr/textColorPrimary">
 
         </TextView>
     </LinearLayout>
@@ -57,7 +58,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="时间选择">
+            android:text="时间选择"
+            android:textColor="?android:attr/textColorPrimary">
 
         </TextView>
     </LinearLayout>
@@ -85,7 +87,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="秒表">
+            android:text="秒表"
+            android:textColor="?android:attr/textColorPrimary">
 
         </TextView>
     </LinearLayout>
@@ -113,7 +116,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
-            android:text="播放器">
+            android:text="播放器"
+            android:textColor="?android:attr/textColorPrimary">
 
         </TextView>
     </LinearLayout>

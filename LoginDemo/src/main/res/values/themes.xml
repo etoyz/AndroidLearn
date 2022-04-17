@@ -14,6 +14,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/material_dynamic_neutral_variant40</item>
     </style>
 
     <!-- 一些组件的主题 -->
