@@ -55,7 +55,7 @@
             android:paddingEnd="@dimen/padding_option"
             android:text="跟随系统"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="25sp" />
+            android:textSize="@dimen/text_size_option" />
 
         <TextView
             android:layout_width="0dp"
@@ -87,7 +87,7 @@
             android:paddingEnd="@dimen/padding_option"
             android:text="深色模式"
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="25sp" />
+            android:textSize="@dimen/text_size_option" />
 
         <TextView
             android:layout_width="0dp"
@@ -119,7 +119,7 @@
             android:gravity="center|center_vertical"
             android:text="退出登录"
             android:textColor="@android:color/holo_red_light"
-            android:textSize="25sp" />
+            android:textSize="@dimen/text_size_option" />
     </LinearLayout>
 
 </LinearLayout>

@@ -16,4 +16,6 @@
     <dimen name="margin_func_divide">8dp</dimen>
     <dimen name="description_option">17sp</dimen>
     <dimen name="nav_height">57dp</dimen>
+    <dimen name="text_size_option">21sp</dimen>
+    <dimen name="image_size_option">29dp</dimen>
 </resources>

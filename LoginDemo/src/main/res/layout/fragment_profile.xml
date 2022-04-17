@@ -60,8 +60,8 @@
         android:paddingBottom="8dp">
 
         <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/image_size_option"
+            android:layout_height="@dimen/image_size_option"
             android:layout_gravity="center|center_vertical"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="7dp"
@@ -73,7 +73,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:text="服务"
-            android:textColor="?android:attr/textColorPrimary">
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_option">
 
         </TextView>
     </LinearLayout>
@@ -89,8 +90,8 @@
         android:paddingBottom="8dp">
 
         <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="@dimen/image_size_option"
+            android:layout_height="@dimen/image_size_option"
             android:layout_gravity="center|center_vertical"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="7dp"
@@ -102,7 +103,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_vertical"
             android:text="设置"
-            android:textColor="?android:attr/textColorPrimary">
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_size_option">
 
         </TextView>
     </LinearLayout>
