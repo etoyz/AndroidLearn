@@ -37,8 +37,15 @@
     </style>
 
     <!-- 底部导航栏的主题 -->
+    <!-- 文档在 https://material.io/components/bottom-navigation/android#bottom-navigation-bar  -->
     <style name="BottomNavigationTheme" parent="Theme.MaterialComponents.DayNight">
+        <!-- Icon/Text label color (active) -->
         <item name="colorPrimary">@color/wechat_green</item>
+        <!-- Icon/Text label color (inactive) -->
+        <item name="colorOnSurface">@color/black</item>
+        <!-- Container color -->
+        <item name="colorSurface">?colorPrimaryVariant</item>
+        <!--        <item name="rippleColor">@null</item>-->
     </style>
 
 </resources>
