@@ -23,6 +23,11 @@
             android:exported="true">
 
         </activity>
+        <activity
+            android:name=".ResourceActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/purple_200"
+    android:padding="10dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_shape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="shape"
+                android:textAllCaps="false"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape"/>
+            <Button
+                android:id="@+id/btn_ripple1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ripple with no mask"
+                android:textAllCaps="false"
+                android:background="@drawable/rp1"
+                android:layout_marginTop="5dp"/>
+            <Button
+                android:id="@+id/btn_ripple2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ripple with color mask"
+                android:textAllCaps="false"
+                android:background="@drawable/rp2"
+                android:layout_marginTop="5dp"/>
+            <Button
+                android:id="@+id/btn_ripple3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ripple with picture mask"
+                android:textAllCaps="false"
+                android:background="@drawable/rp3"
+                android:layout_marginTop="5dp"/>
+            <Button
+                android:id="@+id/btn_ripple4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ripple with shape mask"
+                android:textAllCaps="false"
+                android:background="@drawable/rp4"
+                android:layout_marginTop="5dp"/>
+            <Button
+                android:id="@+id/btn_layerlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="layerlist"
+                android:textAllCaps="false"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/layerlist"/>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/levellist"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/levellist"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/scale"
+
+                android:src="@drawable/scale"/>
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:id="@+id/rotate"
+
+                android:src="@drawable/rotate"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/clip"
+
+                android:src="@drawable/clip"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/anim_list"
+                    android:src="@drawable/aninlist"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/transition"
+                    android:src="@drawable/transition"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
