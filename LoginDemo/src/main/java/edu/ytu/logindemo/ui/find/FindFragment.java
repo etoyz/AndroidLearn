@@ -114,7 +114,7 @@ public class FindFragment extends Fragment {
         AssetFileDescriptor assetFileDescriptor;
         MediaPlayer player = new MediaPlayer();
         try {
-            assetFileDescriptor = getResources().getAssets().openFd("light.mp3");
+            assetFileDescriptor = getResources().getAssets().openFd("奇迹再现.mp3");
             player.setDataSource(assetFileDescriptor.getFileDescriptor(),
                     assetFileDescriptor.getStartOffset(),
                     assetFileDescriptor.getLength());
@@ -129,18 +129,18 @@ public class FindFragment extends Fragment {
             View playerDialogView = LayoutInflater.from(view.getContext()).inflate(R.layout.layout_player, new RelativeLayout(getContext()));
             AlertDialog playerDialog = new AlertDialog.Builder(view.getContext()).setView(playerDialogView).create();
             playerDialog.show();
-            playerDialog.getWindow().setLayout(400, 400);
+//            playerDialog.getWindow().setLayout(800, 1000);
 
             ImageButton playBtn = playerDialog.findViewById(R.id.play);
             ImageButton stopBtn = playerDialog.findViewById(R.id.stop);
             playBtn.setOnClickListener((view1) -> {
                 if (!isPlaying.get()) { // 未播放
                     isPlaying.set(true);
-                    playBtn.setImageDrawable(getContext().getDrawable(R.drawable.btn_pause));
+                    playBtn.setImageDrawable(getResources().getDrawable(R.drawable.btn_pause));
                     player.start();
                 } else { // 正在播放
                     isPlaying.set(false);
-                    playBtn.setImageDrawable(getContext().getDrawable(R.drawable.btn_play));
+                    playBtn.setImageDrawable(getResources().getDrawable(R.drawable.btn_play));
                     player.pause();
                 }
             });
