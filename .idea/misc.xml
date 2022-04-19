@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/drawable/rp2.xml" value="0.104" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_aaa.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_main.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_resouce.xml" value="0.2484375" />
@@ -19,6 +20,9 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_toast.xml" value="0.116" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_wechat_pay.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/bg_wechat_services.xml" value="0.234" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/btn_pause.xml" value="0.104" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/btn_play.xml" value="0.104" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/btn_stop.xml" value="0.104" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/empty.xml" value="0.1035" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/error.xml" value="0.116" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/find.xml" value="0.121" />
@@ -36,9 +40,11 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/more.xml" value="0.121" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/pay.xml" value="0.234" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/pay_white.xml" value="0.234" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/play_btn.xml" value="0.104" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/pocket.xml" value="0.1915" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/profile.xml" value="0.1915" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/progress_spin.xml" value="0.1035" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/rp_play.xml" value="0.104" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/search.xml" value="0.121" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/search1.xml" value="0.121" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/drawable/setting.xml" value="0.1405" />
