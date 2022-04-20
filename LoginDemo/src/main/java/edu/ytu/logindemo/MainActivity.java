@@ -7,15 +7,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
-import edu.ytu.logindemo.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
     private static MyApplication application;
-    private ActivityMainBinding binding;
     private View toolbar;
 
     @Override
@@ -23,12 +22,14 @@ public class MainActivity extends AppCompatActivity {
         // 初始化
         super.onCreate(savedInstanceState);
         application = (MyApplication) getApplication();
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavHostFragment navHostFragment =
+                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_activity_main);
+        assert navHostFragment != null;
+        NavController navController = navHostFragment.getNavController();
+        NavigationUI.setupWithNavController((NavigationBarView) findViewById(R.id.nav_view), navController);
 
         navController.addOnDestinationChangedListener((navController1, navDestination, bundle) -> {
             ((TextView) findViewById(R.id.title)).setText(navDestination.getLabel());
