@@ -61,7 +61,7 @@ public class SettingActivity extends AppCompatActivity {
         SwitchMaterial night_mode_follow_sys_switch = findViewById(R.id.night_mode_follow_sys);
         SwitchMaterial night_mode_switch = findViewById(R.id.night_mode);
         night_mode_follow_sys_switch.setChecked(application.isThemeFollowSystem());
-        night_mode_switch.setChecked(application.isActivatedThemeDark());
+        night_mode_switch.setChecked(application.isThemeDark());
         night_mode_switch.setEnabled(!application.isThemeFollowSystem());
 
         night_mode_follow_sys_switch.setOnClickListener(new View.OnClickListener() {

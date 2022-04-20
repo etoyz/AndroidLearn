@@ -147,10 +147,14 @@ public class MyApplication extends Application {
         preferenceTheme.edit().putBoolean("dark_mode", dark_mode).apply();
     }
 
+    public boolean isThemeDark() {
+        return preferenceTheme.getBoolean("dark_mode", false);
+    }
+
     public boolean isActivatedThemeDark() {
         // 若不是跟随系统, 返回用户设置的主题
         if (!isThemeFollowSystem()) {
-            return preferenceTheme.getBoolean("dark_mode", false);
+            return isThemeDark();
         } else { // 若跟随系统, 返回系统主题
             boolean isDarkThemeOn =
                     (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES; // 设备是否开启暗夜模式
