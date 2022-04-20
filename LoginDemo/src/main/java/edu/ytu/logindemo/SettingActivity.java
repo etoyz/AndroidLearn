@@ -12,7 +12,6 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
@@ -64,10 +63,10 @@ public class SettingActivity extends AppCompatActivity {
         night_mode_switch.setChecked(application.isThemeDark());
         night_mode_switch.setEnabled(!application.isThemeFollowSystem());
 
-        night_mode_follow_sys_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        night_mode_follow_sys_switch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (night_mode_follow_sys_switch.isChecked()) {
                     application.setThemeFollowSystem(true);
                     night_mode_switch.setEnabled(false);
                 } else {
@@ -77,10 +76,14 @@ public class SettingActivity extends AppCompatActivity {
                 application.reloadTheme();
             }
         });
-        night_mode_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        night_mode_switch.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                application.setThemeDark(isChecked);
+            public void onClick(View v) {
+                if (night_mode_switch.isChecked()) {
+                    application.setThemeDark(true);
+                } else {
+                    application.setThemeDark(false);
+                }
                 application.reloadTheme();
             }
         });
