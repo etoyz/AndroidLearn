@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
-                    application.showAlert(MainActivity.this, item.toString(), 1);
+                    application.showAlertWithCustomImage(MainActivity.this, item.toString(), item.getIcon());
                     return true;
                 }
             });

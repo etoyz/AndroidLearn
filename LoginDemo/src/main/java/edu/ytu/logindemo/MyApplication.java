@@ -5,10 +5,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,6 +85,26 @@ public class MyApplication extends Application {
         AlertDialog dialog = new AlertDialog.Builder(context).setView(alertView).setCancelable(true).create();
 
         dialog.show();
+        Window window = dialog.getWindow();
+        window.setLayout(550, 550);
+        window.setBackgroundDrawable(getResources().getDrawable(R.drawable.empty)); //设置背景透明
+        return dialog;
+    }
+
+    public AlertDialog showAlertWithCustomImage(Context context, String text, Drawable drawable) {
+        // inflate view
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View alertView = inflater.inflate(R.layout.toast_success, new RelativeLayout(context));
+        // set param
+        TextView toastMessage = alertView.findViewById(R.id.custom_toast_message);
+        toastMessage.setText(text);
+        ImageView toastImg = alertView.findViewById(R.id.custom_toast_image);
+        toastImg.setImageDrawable(drawable);
+        toastImg.setColorFilter(Color.WHITE);
+        // show
+        AlertDialog dialog = new AlertDialog.Builder(context).setView(alertView).setCancelable(true).create();
+        dialog.show();
+        // adjustment
         Window window = dialog.getWindow();
         window.setLayout(550, 550);
         window.setBackgroundDrawable(getResources().getDrawable(R.drawable.empty)); //设置背景透明
