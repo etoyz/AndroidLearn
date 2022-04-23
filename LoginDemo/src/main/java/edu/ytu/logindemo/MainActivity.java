@@ -1,10 +1,14 @@
 package edu.ytu.logindemo;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private static MyApplication application;
     private View toolbar;
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // 初始化
@@ -49,6 +54,21 @@ public class MainActivity extends AppCompatActivity {
                     toolbar.setVisibility(View.GONE);
                     break;
             }
+        });
+
+        // 右上角加号
+        findViewById(R.id.moreBtn).setOnClickListener(v -> {
+            PopupMenu menu = new PopupMenu(MainActivity.this, v);
+            menu.setForceShowIcon(true);
+            menu.inflate(R.menu.more_menu);
+            menu.show();
+            menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    application.showAlert(MainActivity.this, item.toString(), 1);
+                    return true;
+                }
+            });
         });
     }
 

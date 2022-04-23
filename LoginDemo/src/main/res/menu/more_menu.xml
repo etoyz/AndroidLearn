@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/wechat_home"
+        android:icon="@drawable/init_chat"
+        android:iconTint="?colorOnPrimary"
+        android:title="发起群聊" />
+
+    <item
+        android:id="@+id/address_book"
+        android:icon="@drawable/add_fri"
+        android:iconTint="?colorOnPrimary"
+        android:title="添加朋友" />
+
+    <item
+        android:id="@+id/find"
+        android:icon="@drawable/scan"
+        android:iconTint="?colorOnPrimary"
+        android:title="扫一扫" />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/deal"
+        android:iconTint="?colorOnPrimary"
+        android:title="收付款" />
+</menu>

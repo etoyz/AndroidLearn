@@ -15,6 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColorSecondary">@color/material_dynamic_neutral_variant40</item>
+<!--        <item name="android:popupMenuStyle">@style/PopupTheme</item>-->
     </style>
 
     <!-- 一些组件的主题 -->
@@ -29,6 +30,11 @@
 
     <style name="IconTheme">
         <item name="colorPrimary">@color/black</item>
+    </style>
+
+    <style name="PopupTheme">
+        <item name="android:popupBackground">#99000000</item>
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 
     <!-- 一些页面的主题 -->
