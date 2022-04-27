@@ -24,7 +24,7 @@
     </style>
 
     <style name="ToastTheme">
-        <item name="colorPrimary">#70000000</item>
+        <item name="colorPrimary">#424040</item>
         <item name="colorSecondary">@color/white</item>
     </style>
 
