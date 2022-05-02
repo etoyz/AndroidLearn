@@ -4,10 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/drawable/rp2.xml" value="0.104" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/drawable/shape.xml" value="0.117" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout-w1240dp/activity_friend_circle.xml" value="0.1499330655957162" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout-w1240dp/activity_show_image.xml" value="0.1499330655957162" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout-w1240dp/grid_item.xml" value="0.1497005988023952" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_aaa.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_main.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_recycle_view.xml" value="0.20697463768115942" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_resouce.xml" value="0.2484375" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/activity_show_image.xml" value="0.115625" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/find.xml" value="0.16168478260869565" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/findlist_item.xml" value="0.16168478260869565" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/fragment_item.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/fragment_item_list.xml" value="0.20697463768115942" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/FirstApp/src/main/res/layout/video_item.xml" value="0.20697463768115942" />
@@ -72,12 +79,14 @@
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/csss.xml" value="0.22327898550724637" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/dialog_logout.xml" value="0.16847826086956522" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/dialog_progress.xml" value="0.1" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/findlist_item.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_address_book.xml" value="0.23958333333333334" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_address_book_item.xml" value="0.22554347826086957" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_find.xml" value="0.2" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_gallery.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_home.xml" value="0.16041666666666668" />
-        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_message.xml" value="0.2484375" />
+        <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_message.xml" value="0.1" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_message_list.xml" value="0.2484375" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_notifications.xml" value="0.16041666666666668" />
         <entry key="..\:/Projects/AndroidStudioProjects/YangZhao1/LoginDemo/src/main/res/layout/fragment_profile.xml" value="0.1" />
