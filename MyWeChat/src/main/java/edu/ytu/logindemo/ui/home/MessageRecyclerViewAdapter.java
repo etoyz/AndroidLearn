@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import edu.ytu.logindemo.R;
 import edu.ytu.logindemo.placeholder.PlaceholderContent.PlaceholderItem;
-import edu.ytu.logindemo.databinding.FragmentMessageBinding;
+import edu.ytu.logindemo.databinding.FragmentMessageItemBinding;
 
 import java.util.List;
 
@@ -17,18 +17,18 @@ import java.util.List;
  * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyMessageRecyclerViewAdapter extends RecyclerView.Adapter<MyMessageRecyclerViewAdapter.ViewHolder> {
+public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecyclerViewAdapter.ViewHolder> {
 
     private final List<PlaceholderItem> mValues;
 
-    public MyMessageRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MessageRecyclerViewAdapter(List<PlaceholderItem> items) {
         mValues = items;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        return new ViewHolder(FragmentMessageBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new ViewHolder(FragmentMessageItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
 
     }
 
@@ -51,7 +51,7 @@ public class MyMessageRecyclerViewAdapter extends RecyclerView.Adapter<MyMessage
         public final TextView preview;
         public PlaceholderItem mItem;
 
-        public ViewHolder(FragmentMessageBinding binding) {
+        public ViewHolder(FragmentMessageItemBinding binding) {
             super(binding.getRoot());
             avatar = binding.avatar;
             remark = binding.remark;

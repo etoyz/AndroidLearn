@@ -67,7 +67,7 @@ public class MessageFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyMessageRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new MessageRecyclerViewAdapter(PlaceholderContent.ITEMS));
         }
         return view;
     }

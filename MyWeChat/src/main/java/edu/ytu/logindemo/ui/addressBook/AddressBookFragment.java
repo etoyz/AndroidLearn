@@ -19,10 +19,10 @@ import java.util.List;
 
 import edu.ytu.logindemo.MyApplication;
 import edu.ytu.logindemo.R;
-import edu.ytu.logindemo.databinding.FragmentAddressBookBinding;
+import edu.ytu.logindemo.databinding.FragmentAddressBookListBinding;
 
 public class AddressBookFragment extends Fragment {
-    private FragmentAddressBookBinding binding;
+    private FragmentAddressBookListBinding binding;
     private static MyApplication application;
     List<Friend> friendList;
 
@@ -36,7 +36,7 @@ public class AddressBookFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentAddressBookBinding.inflate(inflater, container, false);
+        binding = FragmentAddressBookListBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
