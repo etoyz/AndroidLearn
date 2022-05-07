@@ -48,7 +48,7 @@
                 android:layout_width="@dimen/toolbar_height"
                 android:layout_height="@dimen/toolbar_height"
                 android:padding="2dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="@dimen/margin_toolbar_btn"
                 android:src="@drawable/add"
                 android:theme="@style/IconTheme"
                 app:layout_constraintRight_toRightOf="parent"
