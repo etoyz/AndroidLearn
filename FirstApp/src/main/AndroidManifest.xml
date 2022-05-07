@@ -27,6 +27,12 @@
         <activity
             android:name=".ResourceActivity"
             android:exported="true"/>
+        <activity
+            android:name=".FriendCircleActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ShowImageActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
