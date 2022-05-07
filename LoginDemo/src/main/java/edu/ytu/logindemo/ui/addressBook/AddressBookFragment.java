@@ -62,12 +62,9 @@ public class AddressBookFragment extends Fragment {
         sideBar.setOnSelectIndexItemListener(new WaveSideBar.OnSelectIndexItemListener() {
             @Override
             public void onSelectIndexItem(String index) {
-                for (int i = 0; i < friendList.size(); i++) {
-                    if (index.equalsIgnoreCase(friendList.get(i).getFirstLetter())) {
-                        int positionForSelection = adapter.getPositionForSection(index);
-                        listView.smoothScrollToPositionFromTop(positionForSelection, 0);
-                    }
-                }
+                int positionForSelection = adapter.getPositionForSection(index);
+                if (positionForSelection != -1)
+                    listView.smoothScrollToPositionFromTop(positionForSelection, 0);
             }
 
         });
@@ -89,7 +86,7 @@ public class AddressBookFragment extends Fragment {
         friendList.add(new Friend(0, R.drawable.avatar, "Hellen"));
         friendList.add(new Friend(0, R.drawable.avatar, "Alexander"));
         friendList.add(new Friend(0, R.drawable.avatar, "Bob"));
-        for (char i = 'A'; i < 'Z'; i++) {
+        for (char i = 'A'; i < 'X'; i++) {
             friendList.add(new Friend(0, R.drawable.avatar, i + "(Generated)"));
         }
         Collections.sort(friendList);
