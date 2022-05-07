@@ -1,4 +1,4 @@
-package edu.ytu.logindemo;
+package edu.ytu.logindemo.ui.addressBook;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,6 +14,8 @@ import android.view.View;
 
 import java.util.Arrays;
 
+import edu.ytu.logindemo.R;
+
 /**
  * Created by gjz on 8/23/16.
  */
@@ -22,7 +24,7 @@ public class WaveSideBar extends View {
     private final static int DEFAULT_MAX_OFFSET = 80; //dp
 
     private final static String[] DEFAULT_INDEX_ITEMS = {"A", "B", "C", "D", "E", "F", "G", "H", "I",
-            "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+            "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"};
 
     private String[] mIndexItems;
 

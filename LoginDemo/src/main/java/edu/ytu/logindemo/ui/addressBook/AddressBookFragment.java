@@ -2,7 +2,6 @@ package edu.ytu.logindemo.ui.addressBook;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,6 @@ import java.util.List;
 
 import edu.ytu.logindemo.MyApplication;
 import edu.ytu.logindemo.R;
-import edu.ytu.logindemo.WaveSideBar;
 import edu.ytu.logindemo.databinding.FragmentAddressBookBinding;
 
 public class AddressBookFragment extends Fragment {
@@ -46,7 +44,8 @@ public class AddressBookFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ListView listView = view.findViewById(R.id.friends);
-        listView.setAdapter(new AddressBookAdapter(getContext(), friendList));
+        AddressBookAdapter adapter = new AddressBookAdapter(getContext(), friendList);
+        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -59,13 +58,18 @@ public class AddressBookFragment extends Fragment {
 //        sideBar.setMaxOffset(100);
 //        sideBar.setPosition(WaveSideBar.POSITION_RIGHT);
 //        sideBar.setTextAlign(WaveSideBar.TEXT_ALIGN_CENTER);
-        sideBar.setLazyRespond(true);
+        sideBar.setLazyRespond(false);
         sideBar.setOnSelectIndexItemListener(new WaveSideBar.OnSelectIndexItemListener() {
             @Override
             public void onSelectIndexItem(String index) {
-                Log.d("WaveSideBar", index);
-                // Do something here ....
+                for (int i = 0; i < friendList.size(); i++) {
+                    if (index.equalsIgnoreCase(friendList.get(i).getFirstLetter())) {
+                        int positionForSelection = adapter.getPositionForSection(index);
+                        listView.smoothScrollToPositionFromTop(positionForSelection, 0);
+                    }
+                }
             }
+
         });
     }
 
@@ -77,11 +81,17 @@ public class AddressBookFragment extends Fragment {
 
     private void init() {
         friendList = new ArrayList<>();
-        friendList.add(new Friend(0, R.drawable.avatar, "666"));
-        friendList.add(new Friend(0, R.drawable.avatar, "小明"));
-        friendList.add(new Friend(0, R.drawable.avatar, "大刚"));
-        friendList.add(new Friend(0, R.drawable.avatar, "123"));
+        friendList.add(new Friend(0, R.drawable.avatar, "张三"));
+        friendList.add(new Friend(0, R.drawable.avatar, "李四"));
+        friendList.add(new Friend(0, R.drawable.avatar, "王五"));
+        friendList.add(new Friend(0, R.drawable.avatar, "杨召"));
+        friendList.add(new Friend(0, R.drawable.avatar, "Tom"));
+        friendList.add(new Friend(0, R.drawable.avatar, "Hellen"));
+        friendList.add(new Friend(0, R.drawable.avatar, "Alexander"));
         friendList.add(new Friend(0, R.drawable.avatar, "Bob"));
+        for (char i = 'A'; i < 'Z'; i++) {
+            friendList.add(new Friend(0, R.drawable.avatar, i + "(Generated)"));
+        }
         Collections.sort(friendList);
     }
 }
