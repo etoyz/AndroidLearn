@@ -1,4 +1,4 @@
-package edu.ytu.logindemo;
+package edu.ytu.wechat;
 
 import android.os.Build;
 import android.os.Bundle;

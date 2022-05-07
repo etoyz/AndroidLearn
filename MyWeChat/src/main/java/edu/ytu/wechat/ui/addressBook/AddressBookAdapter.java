@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.addressBook;
+package edu.ytu.wechat.ui.addressBook;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import edu.ytu.logindemo.R;
+import edu.ytu.wechat.R;
 
 public class AddressBookAdapter extends BaseAdapter {
     private final Context context;

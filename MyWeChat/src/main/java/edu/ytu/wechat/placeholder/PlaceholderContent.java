@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.placeholder;
+package edu.ytu.wechat.placeholder;
 
 import android.graphics.drawable.Icon;
 

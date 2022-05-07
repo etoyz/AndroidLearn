@@ -1,4 +1,4 @@
-package edu.ytu.logindemo;
+package edu.ytu.wechat;
 
 import org.junit.Test;
 

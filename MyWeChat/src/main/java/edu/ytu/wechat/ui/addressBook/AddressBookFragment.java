@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.addressBook;
+package edu.ytu.wechat.ui.addressBook;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,9 +17,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import edu.ytu.logindemo.MyApplication;
-import edu.ytu.logindemo.R;
-import edu.ytu.logindemo.databinding.FragmentAddressBookListBinding;
+import edu.ytu.wechat.MyApplication;
+import edu.ytu.wechat.R;
+import edu.ytu.wechat.databinding.FragmentAddressBookListBinding;
 
 public class AddressBookFragment extends Fragment {
     private FragmentAddressBookListBinding binding;

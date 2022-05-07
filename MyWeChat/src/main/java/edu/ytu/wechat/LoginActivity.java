@@ -1,4 +1,4 @@
-package edu.ytu.logindemo;
+package edu.ytu.wechat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,6 @@ import android.os.SystemClock;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.regex.Pattern;
 

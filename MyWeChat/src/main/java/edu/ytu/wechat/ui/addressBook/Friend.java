@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.addressBook;
+package edu.ytu.wechat.ui.addressBook;
 
 import androidx.annotation.DrawableRes;
 

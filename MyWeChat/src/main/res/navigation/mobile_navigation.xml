@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/wechat_home"
-        android:name="edu.ytu.logindemo.ui.home.MessageFragment"
+        android:name="edu.ytu.wechat.ui.home.MessageFragment"
         android:label="@string/title_wechat_home"
         tools:layout="@layout/fragment_message_list" />
 
     <fragment
         android:id="@+id/address_book"
-        android:name="edu.ytu.logindemo.ui.addressBook.AddressBookFragment"
+        android:name="edu.ytu.wechat.ui.addressBook.AddressBookFragment"
         android:label="@string/title_address_book"
         tools:layout="@layout/fragment_address_book_list" />
 
     <fragment
         android:id="@+id/find"
-        android:name="edu.ytu.logindemo.ui.find.FindFragment"
+        android:name="edu.ytu.wechat.ui.find.FindFragment"
         android:label="@string/title_find"
         tools:layout="@layout/fragment_find" />
 
     <fragment
         android:id="@+id/profile"
-        android:name="edu.ytu.logindemo.ui.profile.ProfileFragment"
+        android:name="edu.ytu.wechat.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

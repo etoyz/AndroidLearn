@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.find;
+package edu.ytu.wechat.ui.find;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -23,8 +23,8 @@ import androidx.fragment.app.Fragment;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import edu.ytu.logindemo.MyApplication;
-import edu.ytu.logindemo.R;
+import edu.ytu.wechat.MyApplication;
+import edu.ytu.wechat.R;
 
 public class FindFragment extends Fragment {
     private static MyApplication application;

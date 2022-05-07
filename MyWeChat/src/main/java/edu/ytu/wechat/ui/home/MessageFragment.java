@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.home;
+package edu.ytu.wechat.ui.home;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import edu.ytu.logindemo.R;
-import edu.ytu.logindemo.placeholder.PlaceholderContent;
+import edu.ytu.wechat.R;
+import edu.ytu.wechat.placeholder.PlaceholderContent;
 
 /**
  * A fragment representing a list of Items.

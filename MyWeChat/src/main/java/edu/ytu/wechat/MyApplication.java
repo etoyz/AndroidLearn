@@ -1,4 +1,4 @@
-package edu.ytu.logindemo;
+package edu.ytu.wechat;
 
 import android.app.Application;
 import android.app.Dialog;

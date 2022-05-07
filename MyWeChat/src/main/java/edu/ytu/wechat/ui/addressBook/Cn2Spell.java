@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.addressBook;
+package edu.ytu.wechat.ui.addressBook;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;

@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.addressBook;
+package edu.ytu.wechat.ui.addressBook;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,7 +14,7 @@ import android.view.View;
 
 import java.util.Arrays;
 
-import edu.ytu.logindemo.R;
+import edu.ytu.wechat.R;
 
 /**
  * Created by gjz on 8/23/16.

@@ -1,4 +1,4 @@
-package edu.ytu.logindemo.ui.home;
+package edu.ytu.wechat.ui.home;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import edu.ytu.logindemo.R;
-import edu.ytu.logindemo.placeholder.PlaceholderContent.PlaceholderItem;
-import edu.ytu.logindemo.databinding.FragmentMessageItemBinding;
+import edu.ytu.wechat.R;
+import edu.ytu.wechat.placeholder.PlaceholderContent.PlaceholderItem;
+import edu.ytu.wechat.databinding.FragmentMessageItemBinding;
 
 import java.util.List;
 
