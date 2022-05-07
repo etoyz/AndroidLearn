@@ -3,10 +3,10 @@ package edu.ytu.wechat.ui.home;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
 
 import edu.ytu.wechat.MyApplication;
-import edu.ytu.wechat.R;
+import edu.ytu.wechat.databinding.ActivityChatBinding;
 
 public class ChatActivity extends AppCompatActivity {
     private static MyApplication application;
@@ -14,11 +14,19 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat);
         application = (MyApplication) getApplication();
+        ActivityChatBinding binding = ActivityChatBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         int position = getIntent().getIntExtra("position", -1);
-        TextView titleView = findViewById(R.id.title);
-        titleView.setText(position+"");
+        binding.title.setText(position + "");
+        binding.iconBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                binding.editArea.scrollBy(0, 30);
+            }
+        });
+
+
     }
 }

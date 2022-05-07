@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="?colorPrimary">
 
+    <!--toolbar-->
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -40,6 +41,7 @@
             android:theme="@style/IconTheme" />
     </RelativeLayout>
 
+    <!--chat scrollView-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,7 +51,9 @@
 
     </ScrollView>
 
+    <!--edit area-->
     <LinearLayout
+        android:id="@+id/edit_area"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_alignParentBottom="true"
@@ -65,7 +69,7 @@
             android:background="?colorPrimaryVariant" />
 
         <ImageView
-            android:id="@+id/icons"
+            android:id="@+id/icon_btn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginHorizontal="3dp"
