@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import edu.ytu.wechat.MyApplication;
+import edu.ytu.wechat.api.UserApi;
 import edu.ytu.wechat.databinding.ActivityChatBinding;
 
 public class ChatActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
         position = getIntent().getIntExtra("position", -1);
         setContentView(binding.getRoot());
 
-        binding.title.setText(position + "");
+        binding.title.setText(UserApi.retrieveMessageList().get(position).getFriend().getName());
         binding.iconBtn.setOnClickListener(v -> {
 //                binding.editArea.scrollBy(0, 30); // 滑动效果
 

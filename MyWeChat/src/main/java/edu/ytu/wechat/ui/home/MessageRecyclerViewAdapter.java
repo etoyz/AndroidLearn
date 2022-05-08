@@ -1,5 +1,6 @@
 package edu.ytu.wechat.ui.home;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -8,59 +9,52 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import edu.ytu.wechat.R;
-import edu.ytu.wechat.placeholder.PlaceholderContent.PlaceholderItem;
 import edu.ytu.wechat.databinding.FragmentMessageItemBinding;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<MessageRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Message> messageList;
 
-    public MessageRecyclerViewAdapter(List<PlaceholderItem> items) {
-        mValues = items;
+    public MessageRecyclerViewAdapter(List<Message> list) {
+        messageList = list;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ViewHolder(FragmentMessageItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
-
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.avatar.setImageResource(R.drawable.avatar);
-        holder.remark.setText(mValues.get(position).remark);
-        holder.preview.setText(mValues.get(position).preview);
+        holder.setMessage(messageList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return messageList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final ImageView avatar;
-        public final TextView remark;
-        public final TextView preview;
-        public PlaceholderItem mItem;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public void setMessage(Message message) {
+            this.message = message;
+            avatar.setImageResource(message.getFriend().getAvatar());
+            name.setText(message.getFriend().getName());
+            preview.setText(message.getPreview());
+        }
+
+        public Message message;
+        private final ImageView avatar;
+        private final TextView name;
+        private final TextView preview;
 
         public ViewHolder(FragmentMessageItemBinding binding) {
             super(binding.getRoot());
             avatar = binding.avatar;
-            remark = binding.remark;
+            name = binding.name;
             preview = binding.preview;
         }
-
-//        @Override
-//        public String toString() {
-//            return super.toString() + " '" + mContentView.getText() + "'";
-//        }
     }
 }

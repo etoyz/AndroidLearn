@@ -17,12 +17,12 @@ import android.view.ViewGroup;
 
 import edu.ytu.wechat.MyApplication;
 import edu.ytu.wechat.R;
-import edu.ytu.wechat.placeholder.PlaceholderContent;
+import edu.ytu.wechat.api.UserApi;
 
-public class MessageFragment extends Fragment {
+public class MessageListFragment extends Fragment {
     private static MyApplication application;
 
-    public MessageFragment() {
+    public MessageListFragment() {
     }
 
     @Override
@@ -40,7 +40,7 @@ public class MessageFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
 
-        recyclerView.setAdapter(new MessageRecyclerViewAdapter(PlaceholderContent.ITEMS));
+        recyclerView.setAdapter(new MessageRecyclerViewAdapter(UserApi.retrieveMessageList()));
 
 
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(recyclerView.getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
