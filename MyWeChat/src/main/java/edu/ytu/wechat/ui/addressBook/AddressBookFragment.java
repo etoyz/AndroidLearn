@@ -54,10 +54,6 @@ public class AddressBookFragment extends Fragment {
         });
 
         WaveSideBar sideBar = view.findViewById(R.id.side_bar);
-        sideBar.setTextColor(Color.BLACK);
-//        sideBar.setMaxOffset(100);
-//        sideBar.setPosition(WaveSideBar.POSITION_RIGHT);
-//        sideBar.setTextAlign(WaveSideBar.TEXT_ALIGN_CENTER);
         sideBar.setLazyRespond(false);
         sideBar.setOnSelectIndexItemListener(new WaveSideBar.OnSelectIndexItemListener() {
             @Override
