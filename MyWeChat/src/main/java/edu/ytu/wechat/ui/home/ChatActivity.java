@@ -134,6 +134,7 @@ public class ChatActivity extends AppCompatActivity {
             drawerParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
             binding.bottomDrawer.setVisibility(View.VISIBLE);
             isDrawerOpen = true;
+            binding.chatList.scrollToPosition(binding.chatList.getAdapter().getItemCount() - 1);
             // 关闭输入法
             closeIME();
         } else {
