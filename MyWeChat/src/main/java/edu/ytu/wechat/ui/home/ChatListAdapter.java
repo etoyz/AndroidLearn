@@ -51,9 +51,13 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
             this.chatMessage = chatMessage;
             if (chatMessage.isYours()) {
                 msgYours.setText(chatMessage.getContent());
+                // 此ViewHolder如果是回收来的，”msgYours“可能之前被设置为不可见
+                msgYours.setVisibility(View.VISIBLE);
                 msgOther.setVisibility(View.GONE);
             } else {
                 msgOther.setText(chatMessage.getContent());
+                // 此ViewHolder如果是回收来的，“msgOther”可能之前被设置为不可见
+                msgOther.setVisibility(View.VISIBLE);
                 msgYours.setVisibility(View.GONE);
             }
         }
