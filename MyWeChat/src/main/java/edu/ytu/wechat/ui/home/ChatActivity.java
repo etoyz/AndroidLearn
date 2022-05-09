@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
@@ -44,6 +45,18 @@ public class ChatActivity extends AppCompatActivity {
                     binding.inputContent.getText().toString(), null, null, true)
             );
             binding.chatList.getAdapter().notifyItemInserted(newPosition);
+            binding.chatList.smoothScrollToPosition(newPosition);
+            new Thread(() -> {  // 此线程模拟对方发送消息
+                String oldTitle = binding.title.getText().toString();
+                binding.title.setText("对方正在输入...");
+                SystemClock.sleep(1000);    // SystemClock
+                int np = adapter.addChatMessage(new ChatMessage(
+                        "回复(" + binding.inputContent.getText().toString(), null, null, false)
+                );
+                runOnUiThread(() -> binding.chatList.getAdapter().notifyItemInserted(np));
+                binding.chatList.smoothScrollToPosition(np);
+                binding.title.setText(oldTitle);
+            }).start();
         });
         binding.title.setText(UserApi.retrieveMessageList().get(position).getFriend().getName());
         binding.iconBtn.setOnClickListener(v -> {
