@@ -49,6 +49,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public void setChatMessage(ChatMessage chatMessage) {
             this.chatMessage = chatMessage;
+            if(chatMessage.getContent().equals(""))
+                chatMessage.setContent("      ");
             if (chatMessage.isYours()) {
                 msgYours.setText(chatMessage.getContent());
                 // 此ViewHolder如果是回收来的，”msgYours“可能之前被设置为不可见
