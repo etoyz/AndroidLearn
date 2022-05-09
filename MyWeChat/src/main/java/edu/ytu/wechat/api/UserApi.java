@@ -2,10 +2,12 @@ package edu.ytu.wechat.api;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import edu.ytu.wechat.R;
 import edu.ytu.wechat.ui.addressBook.Friend;
+import edu.ytu.wechat.ui.home.ChatMessage;
 import edu.ytu.wechat.ui.home.Message;
 
 public class UserApi {
@@ -40,5 +42,13 @@ public class UserApi {
         Collections.sort(friendList);
 
         return friendList;
+    }
+
+    public static List<ChatMessage> retrieveChatMessageList() {
+        List<ChatMessage> chatMessageList = new ArrayList<>();
+        chatMessageList.add(new ChatMessage("你好", friendList.get(0), new Date(), false));
+        chatMessageList.add(new ChatMessage("你好2", friendList.get(0), new Date(), false));
+        chatMessageList.add(new ChatMessage("你好3", friendList.get(0), new Date(), true));
+        return chatMessageList;
     }
 }

@@ -3,6 +3,7 @@ package edu.ytu.wechat.ui.home;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import android.app.Activity;
@@ -35,6 +36,8 @@ public class ChatActivity extends AppCompatActivity {
         position = getIntent().getIntExtra("position", -1);
         setContentView(binding.getRoot());
 
+        binding.chatList.setLayoutManager(new LinearLayoutManager(ChatActivity.this));
+        binding.chatList.setAdapter(new ChatListAdapter(UserApi.retrieveChatMessageList()));
         binding.title.setText(UserApi.retrieveMessageList().get(position).getFriend().getName());
         binding.iconBtn.setOnClickListener(v -> {
             alterBottomDrawer(0);
