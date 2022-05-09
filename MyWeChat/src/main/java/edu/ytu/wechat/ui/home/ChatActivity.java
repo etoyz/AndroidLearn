@@ -37,7 +37,14 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         binding.chatList.setLayoutManager(new LinearLayoutManager(ChatActivity.this));
-        binding.chatList.setAdapter(new ChatListAdapter(UserApi.retrieveChatMessageList()));
+        ChatListAdapter adapter = new ChatListAdapter(UserApi.retrieveChatMessageList());
+        binding.chatList.setAdapter(adapter);
+        binding.sendBtn.setOnClickListener(v -> {
+            int newPosition = adapter.addChatMessage(new ChatMessage(
+                    binding.inputContent.getText().toString(), null, null, true)
+            );
+            binding.chatList.getAdapter().notifyItemInserted(newPosition);
+        });
         binding.title.setText(UserApi.retrieveMessageList().get(position).getFriend().getName());
         binding.iconBtn.setOnClickListener(v -> {
             alterBottomDrawer(0);

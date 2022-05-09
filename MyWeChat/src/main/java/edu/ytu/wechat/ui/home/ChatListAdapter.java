@@ -19,6 +19,17 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
         this.chatMessageList = chatMessageList;
     }
 
+    /**
+     * 新增ChatMessage
+     *
+     * @param message 新增的message
+     * @return 新增message的position
+     */
+    public int addChatMessage(ChatMessage message) {
+        chatMessageList.add(message);
+        return chatMessageList.size() - 1;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
