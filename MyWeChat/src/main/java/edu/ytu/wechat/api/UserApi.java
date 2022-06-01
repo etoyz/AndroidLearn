@@ -28,6 +28,7 @@ public class UserApi {
     }
 
     public static List<Friend> retrieveFriendList() {
+        friendList.clear();
         friendList.add(new Friend(0, R.drawable.avatar, "张三"));
         friendList.add(new Friend(0, R.drawable.avatar, "李四"));
         friendList.add(new Friend(0, R.drawable.avatar, "王五"));
