@@ -42,7 +42,7 @@ public class AddressBookFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ListView listView = view.findViewById(R.id.friends);
+        ListView listView = binding.friends;
         AddressBookAdapter adapter = new AddressBookAdapter(getContext(), friendList);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,7 +55,7 @@ public class AddressBookFragment extends Fragment {
             }
         });
 
-        WaveSideBar sideBar = view.findViewById(R.id.side_bar);
+        WaveSideBar sideBar = binding.sideBar;
         sideBar.setLazyRespond(false);
         sideBar.setOnSelectIndexItemListener(new WaveSideBar.OnSelectIndexItemListener() {
             @Override
