@@ -1,12 +1,12 @@
 package edu.ytu.wechat.ui.addressBook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +18,7 @@ import edu.ytu.wechat.MyApplication;
 import edu.ytu.wechat.R;
 import edu.ytu.wechat.api.UserApi;
 import edu.ytu.wechat.databinding.FragmentAddressBookListBinding;
+import edu.ytu.wechat.ui.home.ChatActivity;
 
 public class AddressBookFragment extends Fragment {
     private FragmentAddressBookListBinding binding;
@@ -47,7 +48,10 @@ public class AddressBookFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                application.showAlert(getContext(), ((TextView) view.findViewById(R.id.name)).getText().toString(), 1);
+//                application.showAlert(getContext(), ((TextView) view.findViewById(R.id.name)).getText().toString(), 1);
+                Intent intent = new Intent(view.getContext(), ChatActivity.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
             }
         });
 
