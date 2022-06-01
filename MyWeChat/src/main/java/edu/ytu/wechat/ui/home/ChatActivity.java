@@ -11,6 +11,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
@@ -31,27 +32,39 @@ public class ChatActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // init activity
         super.onCreate(savedInstanceState);
         application = (MyApplication) getApplication();
         binding = ActivityChatBinding.inflate(getLayoutInflater());
         position = getIntent().getIntExtra("position", -1);
         setContentView(binding.getRoot());
 
+        // init chatList
         binding.chatList.setLayoutManager(new LinearLayoutManager(ChatActivity.this));
         ChatListAdapter adapter = new ChatListAdapter(UserApi.retrieveChatMessageList());
         binding.chatList.setAdapter(adapter);
+        binding.inputContent.setOnKeyListener((v, keyCode, event) -> {
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+                binding.sendBtn.callOnClick();
+                return true;
+            }
+            return false;
+        });
         binding.sendBtn.setOnClickListener(v -> {
             int newPosition = adapter.addChatMessage(new ChatMessage(
                     binding.inputContent.getText().toString(), null, null, true)
             );
             binding.chatList.getAdapter().notifyItemInserted(newPosition);
             binding.chatList.smoothScrollToPosition(newPosition);
+            String sendMsg = binding.inputContent.getText().toString();
+            binding.inputContent.setText("");
             new Thread(() -> {  // 此线程模拟对方发送消息
+
                 String oldTitle = binding.title.getText().toString();
                 binding.title.setText("对方正在输入...");
                 SystemClock.sleep(1000);    // SystemClock
                 int np = adapter.addChatMessage(new ChatMessage(
-                        "回复(" + binding.inputContent.getText().toString(), null, null, false)
+                        "回复(" + sendMsg, null, null, false)
                 );
                 runOnUiThread(() -> binding.chatList.getAdapter().notifyItemInserted(np));
                 binding.chatList.smoothScrollToPosition(np);
