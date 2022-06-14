@@ -48,7 +48,7 @@
         android:layout_height="match_parent"
         android:layout_above="@id/edit_area"
         android:layout_below="@+id/toolbar"
-        android:background="?colorPrimaryVariant"/>
+        android:background="?colorPrimaryVariant" />
 
     <!--edit area-->
     <LinearLayout
@@ -105,13 +105,11 @@
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="我的收藏" />
+                android:layout_height="wrap_content" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="表情商城" />
+                android:layout_height="wrap_content" />
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2
