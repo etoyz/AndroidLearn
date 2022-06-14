@@ -1,13 +1,17 @@
 package edu.ytu.wechat;
 
+import android.Manifest;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -15,6 +19,10 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationBarView;
+
+import io.github.g00fy2.quickie.QRResult;
+import io.github.g00fy2.quickie.ScanQRCode;
+import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,18 +64,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ActivityResultLauncher scanQrCode = registerForActivityResult(
+                new ScanQRCode(),
+                new ActivityResultCallback<QRResult>() {
+                    @Override
+                    public void onActivityResult(QRResult result) {
+                        System.out.println(result.toString());
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(((QRResult.QRSuccess) result).getContent().getRawValue())));
+                    }
+                });
+
         // 右上角加号
         findViewById(R.id.moreBtn).setOnClickListener(v -> {
             PopupMenu menu = new PopupMenu(MainActivity.this, v);
             menu.setForceShowIcon(true);
             menu.inflate(R.menu.more_menu);
             menu.show();
-            menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    application.showAlertWithCustomImage(MainActivity.this, item.toString(), item.getIcon());
-                    return true;
+            menu.setOnMenuItemClickListener(item -> {
+                if (EasyPermissions.hasPermissions(MainActivity.this, Manifest.permission.CAMERA)) {
+//                        CaptureActivity.start(this @MainActivity,SCAN_REQUEST_CODE)
+//                    startActivityForResult(new Intent(MainActivity.this, CaptureActivity.class), 1);
+                    scanQrCode.launch(null);
+                } else {
+                    EasyPermissions.requestPermissions(
+                            MainActivity.this,
+                            "应用需要访问相机权限!",
+                            1,
+                            Manifest.permission.CAMERA
+                    );
                 }
+//                application.showAlertWithCustomImage(MainActivity.this, item.toString(), item.getIcon());
+                return true;
             });
         });
     }
