@@ -171,21 +171,18 @@ public class ChatActivity extends AppCompatActivity implements IconGridFragment.
 
     @Override
     public void inputView(ImageView view) {
-        ChatMessage message = new ChatMessage(
-                binding.inputContent.getText().toString(), null, null, true);
+        ChatMessage message = new ChatMessage("", null, null, true);
         message.setIconView(view);
         int newPosition = adapter.addChatMessage(message);
         binding.chatList.getAdapter().notifyItemInserted(newPosition);
         binding.chatList.smoothScrollToPosition(newPosition);
-        String sendMsg = binding.inputContent.getText().toString();
         binding.inputContent.setText("");
         new Thread(() -> {  // 此线程模拟对方发送消息
-
             String oldTitle = binding.title.getText().toString();
             binding.title.setText("对方正在输入...");
             SystemClock.sleep(1000);    // SystemClock
             int np = adapter.addChatMessage(new ChatMessage(
-                    "回复(" + sendMsg, null, null, false)
+                    "回复(表情信息", null, null, false)
             );
             runOnUiThread(() -> binding.chatList.getAdapter().notifyItemInserted(np));
             binding.chatList.smoothScrollToPosition(np);
