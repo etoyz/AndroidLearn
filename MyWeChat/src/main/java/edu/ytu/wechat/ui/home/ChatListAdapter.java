@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -53,27 +54,43 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
             if (chatMessage.getContent().equals(""))
                 chatMessage.setContent("      ");
             if (chatMessage.isYours()) {
-                msgYours.setText(chatMessage.getContent());
-                // 此ViewHolder如果是回收来的，”msgYours“可能之前被设置为不可见
-                msgYours.setVisibility(View.VISIBLE);
-                avatarYours.setVisibility(View.VISIBLE);
-                msgOther.setVisibility(View.GONE);
-                avatarOther.setVisibility(View.GONE);
+                // 此ViewHolder如果是回收来的，”yours“可能之前被设置为不可见
+                yours.setVisibility(View.VISIBLE);
+                other.setVisibility(View.GONE);
+                if (chatMessage.getIconView() != null) {
+                    iconYours.setImageDrawable(chatMessage.getIconView().getDrawable());
+                    iconYours.setVisibility(View.VISIBLE);
+                    msgYours.setVisibility(View.GONE);
+                } else {
+                    msgYours.setText(chatMessage.getContent());
+                    msgYours.setVisibility(View.VISIBLE);
+                    iconYours.setVisibility(View.GONE);
+                }
             } else {
-                msgOther.setText(chatMessage.getContent());
-                // 此ViewHolder如果是回收来的，“msgOther”可能之前被设置为不可见
-                msgOther.setVisibility(View.VISIBLE);
-                avatarOther.setVisibility(View.VISIBLE);
-                msgYours.setVisibility(View.GONE);
-                avatarYours.setVisibility(View.GONE);
+                // 此ViewHolder如果是回收来的，“other”可能之前被设置为不可见
+                other.setVisibility(View.VISIBLE);
+                yours.setVisibility(View.GONE);
+                if (chatMessage.getIconView() != null) {
+                    iconOther.setImageDrawable(chatMessage.getIconView().getDrawable());
+                    iconOther.setVisibility(View.VISIBLE);
+                    msgOther.setVisibility(View.GONE);
+                } else {
+                    msgOther.setText(chatMessage.getContent());
+                    msgOther.setVisibility(View.VISIBLE);
+                    iconOther.setVisibility(View.GONE);
+                }
             }
         }
 
         public ChatMessage chatMessage;
+        private final ConstraintLayout yours;
+        private final ConstraintLayout other;
         private final TextView msgOther;
         private final TextView msgYours;
         private final ImageView avatarYours;
         private final ImageView avatarOther;
+        private final ImageView iconYours;
+        private final ImageView iconOther;
 
         public ViewHolder(ActivityChatItemBinding binding) {
             super(binding.getRoot());
@@ -81,6 +98,10 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
             msgYours = binding.msgYours;
             avatarYours = binding.avatarYours;
             avatarOther = binding.avatarOther;
+            iconYours = binding.iconYours;
+            iconOther = binding.iconOther;
+            yours = binding.yours;
+            other = binding.other;
         }
     }
 }

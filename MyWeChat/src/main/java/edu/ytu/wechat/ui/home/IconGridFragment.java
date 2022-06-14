@@ -1,7 +1,9 @@
 package edu.ytu.wechat.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import edu.ytu.wechat.databinding.FragmentIconGridBinding;
 public class IconGridFragment extends Fragment {
     private int position;
     FragmentIconGridBinding binding;
+    IconInput input;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,7 +82,7 @@ public class IconGridFragment extends Fragment {
                         holder.img.setImageResource(R.drawable.a05);
                         break;
                 }
-
+                holder.img.setOnClickListener(v -> input.inputView((ImageView) v));
                 return convertView;
             }
 
@@ -88,5 +91,27 @@ public class IconGridFragment extends Fragment {
             }
         });
         return binding.getRoot();
+    }
+
+    public interface IconInput {
+        void inputView(ImageView view);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof IconInput) {
+            input = (IconInput) context;
+        } else {
+            throw new RuntimeException(context
+                    + " must implement IconInput");
+        }
+    }
+
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        input = null;
     }
 }

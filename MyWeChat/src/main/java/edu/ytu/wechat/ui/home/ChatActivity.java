@@ -15,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -23,12 +24,13 @@ import edu.ytu.wechat.MyApplication;
 import edu.ytu.wechat.api.UserApi;
 import edu.ytu.wechat.databinding.ActivityChatBinding;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity implements IconGridFragment.IconInput {
     private static MyApplication application;
     private static boolean isDrawerOpen = false;
     private static boolean isKeyBoardOpen = false;
     private static int position;
     ActivityChatBinding binding;
+    ChatListAdapter adapter = new ChatListAdapter(UserApi.retrieveChatMessageList());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,6 @@ public class ChatActivity extends AppCompatActivity {
 
         // init chatList
         binding.chatList.setLayoutManager(new LinearLayoutManager(ChatActivity.this));
-        ChatListAdapter adapter = new ChatListAdapter(UserApi.retrieveChatMessageList());
         binding.chatList.setAdapter(adapter);
         binding.inputContent.setOnKeyListener((v, keyCode, event) -> {
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
@@ -166,6 +167,30 @@ public class ChatActivity extends AppCompatActivity {
     public void closeIME() {
         InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         manager.hideSoftInputFromWindow(binding.getRoot().getWindowToken(), 0);
+    }
+
+    @Override
+    public void inputView(ImageView view) {
+        ChatMessage message = new ChatMessage(
+                binding.inputContent.getText().toString(), null, null, true);
+        message.setIconView(view);
+        int newPosition = adapter.addChatMessage(message);
+        binding.chatList.getAdapter().notifyItemInserted(newPosition);
+        binding.chatList.smoothScrollToPosition(newPosition);
+        String sendMsg = binding.inputContent.getText().toString();
+        binding.inputContent.setText("");
+        new Thread(() -> {  // 此线程模拟对方发送消息
+
+            String oldTitle = binding.title.getText().toString();
+            binding.title.setText("对方正在输入...");
+            SystemClock.sleep(1000);    // SystemClock
+            int np = adapter.addChatMessage(new ChatMessage(
+                    "回复(" + sendMsg, null, null, false)
+            );
+            runOnUiThread(() -> binding.chatList.getAdapter().notifyItemInserted(np));
+            binding.chatList.smoothScrollToPosition(np);
+            binding.title.setText(oldTitle);
+        }).start();
     }
 
     static class SoftKeyBoardListener {
